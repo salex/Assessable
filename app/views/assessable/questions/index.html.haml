@@ -20,7 +20,7 @@
     - @questions.each do |question|
       %tr
         %td= question.sequence
-        %td= question.question_text
+        %td= truncateText question.question_text
         %td= question.short_name
         %td= question.group_header
         %td= question.answer_tag

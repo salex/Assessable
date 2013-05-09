@@ -45,13 +45,15 @@ module Assessable
       if text_length <= length
         return text
       end
+      result = ""
       if where.downcase == "end"
-        return( text.first(length)+"&hellip;")
+        result = ( text.first(length)+"&hellip;")
       elsif where.downcase == "begin"
-        return( text.last(length)+"&hellip;")
+        result = ( text.last(length)+"&hellip;")
       else
-        return(text.first(length / 2)+"&hellip;"+ text.last(length / 2))
+        result = (text.first(length / 2)+"&hellip;"+ text.last(length / 2))
       end
+      return result.html_safe
     end
     
   end
