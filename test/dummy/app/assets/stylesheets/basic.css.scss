@@ -1,0 +1,215 @@
+@import "mixins.css.scss";
+@media only screen and (max-width: 960px) { #container { width: 100%; margin: 0;min-width:768px } }
+
+#mybody {background-color:$mybody-color}
+#container { 
+  background: $container-color;
+  width: 960px; 
+  min-height: 720px;  
+  margin: auto;
+  position:relative;
+}
+#header { background: tranparent; 
+    border-bottom: 2px solid; 
+    font: small-caps 40px/40px "Times New Roman", serif; color: #222288; 
+    text-align: center; 
+    a {
+      text-decoration: none; 
+      background:transparent
+    }
+}
+
+#content {
+  background: transparent; 
+  padding: 0.5em;
+  a { 
+    text-decoration: none; 
+    color: blue;
+    font-size:0.9em;
+    &:hover { 
+      color: red!important;
+      background-color:transparent
+    }
+  }
+  fieldset { 
+    position: relative; 
+    background: #eee; 
+    padding: 4px;
+    margin-right: auto; 
+    margin-left: auto; 
+    margin-top: 4px; 
+    margin-bottom: 4px; 
+    border: 1px solid; 
+    border-color: $medium-color;
+    @include rounded-corners(5px);
+    legend { 
+      position: relative; 
+      color: #003366;  
+      background-color:$content-color; 
+      font-size: 0.9em; 
+      border: 1px solid; 
+      border-color: $medium-color; 
+      margin-left: 10px; 
+      padding: 2px 4px; 
+      font-weight: bold; 
+    }
+  }
+}
+
+.navbar { background: $menu-color; padding: 2px; color:white }
+.navbar a {color:white!important}
+
+.action-bar { padding: 4px; margin:2px; background-color: $lighter-color}
+ul{
+  margin-left:1em;
+  li {margin-left: 1.5em;}
+}
+span.annotate, div.annotate {
+  font-style: italic;
+  font-size: 0.8em!important;
+  line-height: 1em;
+  font-weight: normal;
+}
+
+
+.box {
+	padding:6px;
+	background:#fff;
+	border:solid 1px $dark-color;
+	margin-top:6px;
+}
+.field {background-color:#fff;margin-bottom:2px;}
+.field label {display:inline-block;width:120px; font-weight:bold;text-align:right;vertical-align:top;}
+
+h4 {font-size:1.25em;font-weight:bold;border-bottom:$darker-color;font-variant: small-caps;}
+
+
+input.required, input.validate-one-name { background-color: #F7EFCC; }
+
+
+.failed {color : red}
+.alert {color:red; background-color:pink; border:solid 1px red; padding:4px; width:95%; margin:auto}
+.notice {color:green;width:100%; background-color:LightGreen; border:solid 1px green; padding:4px; width:95%; margin:auto}
+.f-left {float:left;padding-right:1em;}
+.f_right {float:right;padding-left:1em;}
+.f_clear { clear:both;}
+
+/*
+#footer { background: $menu-color; color: white; padding: 4px;clear:both; width:960px; margin: auto }
+#footer a { color: #aaccaa; text-decoration: none; }
+#footer a:hover { color: white; }
+#pucontainer { background: $container-color; width: 960px; min-height: 720px;  margin: auto;position:relative}
+#navbar { background: $menu-color; padding: 2px; color:white }
+#pucontent { padding: 0.5em; background: transparent;}
+#content-print { background: white; margin: 0.5in; width: 8.5in; }
+#expires.red {color:red;font-weight:bold;}
+
+
+#content-left { width: 180px; float:left; padding: 0.25em; background: transparent;margin-right:0.5em; }
+
+#content-right {
+  background: transparent; 
+  padding: 1em; 
+  width: auto; 
+  p { 
+    margin-bottom: 0.5em;
+  }
+}
+@media print {  
+    body { background-color: #FFF; }  
+  #container {  
+        width: auto;  
+        margin: 0;  
+        padding: 0;  
+        border: none;  
+    }  
+      
+    #header {display:none}
+    #navbar {display:none}
+    #footer {display:none}
+    #athentication {display:none}
+    
+    .next-page {  
+        page-break-after: always;  
+    }  
+      
+    #pdf_link {  
+        display: none;  
+    }  
+}  
+
+
+
+//.text p {margin:8px 0}
+//.instructions { width:720px; background_color:$medium-color;  padding:2px; margin-left:auto; margin-right: auto; line-height: 1em;}
+ul.tree {
+  margin-left:0.5em;
+  li {margin: 0 1em;}
+}
+
+ul.dropdown{
+  li {list-style-type:none}
+  .sub-menu {display:none}
+  
+  a.other-links { 
+    font-size: 0.75em!important; 
+    background: #4C6FA4; 
+    border: $light-color solid 1px; 
+    margin-left: -1px; 
+    padding: 1px 2px; 
+    color: white!important; 
+    text-decoration: none; 
+  }
+  a.other-links:hover { 
+    color: red!important;
+    background-color:transparent
+  }
+  
+}
+//.fixed-box {position:fixed;top:40%;right:0px;width:500px;background: #f8f8f8;border:solid 1px #16b;font-weight:bold;padding:3px}
+//.little-box { border: solid 1px #567; background: #fff;white-space:nowrap; margin-right:4px;padding:2px;margin-top:2px;}
+//.fixed-box {position:fixed;width: 930px;  background: #f8f8f8;border:solid 1px #16b;font-weight:bold;padding:3px}
+
+//.border-r {border-right:solid 1px $darker-color; padding: 0 2px}
+.breadcrumbs {font-size: 0.9em}
+.action-links {font-size: 0.75em; font-weight:normal}
+.action-links a, {  background: #4C6FA4; 
+  border: $light-color solid 1px; 
+  margin-left: -1px; 
+  padding: 2px 4px; 
+  color: white!important; 
+  text-decoration: none; }
+.action-links a:hover, { color: red!important;background-color:transparent}
+
+span.link { text-decoration: none; color: blue;font-size:0.9em; }
+
+span.link input[type="checkbox"] {color:blue}
+span.link:hover, #content a:hover { color: red!important;background-color:transparent}
+.links label {font-weight: bold;}
+.white-links a { text-decoration: none; color: white;font-size:0.9em; }
+.white-links a:hover { color: red!important;background-color:transparent}
+.light-text {color:#ddd}
+span.hover:hover { color: red!important;}
+
+
+
+.stuff { float: left; margin-left: 10px; border: 2px outset buttonface; background: #dddddd; padding: 5px; }
+
+
+
+
+
+
+label.inline {padding: 2px 6px 2px 2px; background: #C6CCDC; border: none;  font-weight: bold;}
+.small-caps {
+     font-variant: small-caps;
+}
+
+
+.markdown {
+  p {
+    padding: 0.4em 0;
+  }
+}
+.mdown p {margin-bottom: 1em}
+*/

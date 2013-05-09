@@ -1,0 +1,36 @@
+%fieldset.index-list
+
+  %legend 
+    Assessment Questions
+    = link_to 'New Question', new_assessment_question_path(@assessment)
+
+  %table
+    %tr.list-header
+      %th Sequence
+      %th Question
+      %th Shortname
+      %th Group
+      %th Tag
+      %th Layout
+      %th Weight
+      %th Critical
+      %th Score
+      %th Actions
+
+    - @questions.each do |question|
+      %tr
+        %td= question.sequence
+        %td= question.question_text
+        %td= question.short_name
+        %td= question.group_header
+        %td= question.answer_tag
+        %td= question.answer_layout
+        %td= question.weight
+        %td= question.critical
+        %td= question.score_method
+        %td
+          = link_to 'Show', question
+          = link_to 'Edit', edit_question_path(question)
+          = link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Assessment:
+  = @surveyor.assessment_id
+%p
+  %b Name:
+  = @surveyor.name
+%p
+  %b Published assessment:
+  = @surveyor.published_assessment
+%p
+  %b Version at:
+  = @surveyor.version_at
+%p
+  %b Category:
+  = @surveyor.category
+%p
+  %b Instructions:
+  = @surveyor.instructions
+%p
+  %b Sequence:
+  = @surveyor.sequence
+%p
+  %b Assessmented type:
+  = @surveyor.assessable_type
+%p
+  %b Assessmented:
+  = @surveyor.assessable_id
+
+= link_to 'Edit', edit_surveyor_path(@surveyor)
+\|
+= link_to 'Back', surveyors_path

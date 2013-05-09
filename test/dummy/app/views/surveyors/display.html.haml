@@ -1,0 +1,26 @@
+%fieldset
+  %legend Instructions
+  .box
+    %p This is just an example of how an assessment would be displayed.
+    %p
+      %span.annotate If there were multiple assessments, this area would show the status in some form.
+    %ul
+      %li
+        = check_box("one",nil)
+        Section 1
+      %li
+        = check_box("one",nil)
+        Section 2
+      %li
+        = check_box("one",nil)
+        Section 3
+%fieldset
+  %legend
+    Section - #{@surveyor["category"]}
+  = form_tag post_surveyor_path(@surveyor), :id => "assessarea", :name => "assessarea", :"data-behavior" => "validateRequired"
+  = Assessing::Display.new.assessment(@surveyor.published_assessment,@post)
+  %input{:name => "submit", :type => "submit", :value => "Continue"}/
+.f-clear
+/ = session.inspect
+/ = @post.inspect
+/ = @stash.inspect

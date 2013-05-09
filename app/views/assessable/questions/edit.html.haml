@@ -1,0 +1,9 @@
+%fieldset
+  %legend Editing Question
+
+  = render 'form'
+
+.navbar
+  = link_to 'Show', @question
+  \|
+  = link_to 'Assessment', assessment_path(@question.assessment_id)

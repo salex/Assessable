@@ -1,0 +1,37 @@
+= form_for @surveyor do |f|
+  - if @surveyor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@surveyor.errors.count, "error")} prohibited this surveyor from being saved:"
+      %ul
+        - @surveyor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :assessment_id
+    = f.number_field :assessment_id
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :published_assessment
+    = f.text_area :published_assessment
+  .field
+    = f.label :version_at
+    = f.datetime_select :version_at
+  .field
+    = f.label :category
+    = f.text_field :category
+  .field
+    = f.label :instructions
+    = f.text_area :instructions
+  .field
+    = f.label :sequence
+    = f.number_field :sequence
+  .field
+    = f.label :assessable_type
+    = f.text_field :assessable_type
+  .field
+    = f.label :assessable_id
+    = f.number_field :assessable_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,11 @@
+%fieldset.index-list
+  %legend
+    Score Summary
+    = @post["scores"]
+  %table
+    %tr.list-header
+      %th.col-10 Questions
+      %th Answers
+      %th.col-1 R
+      %th.col-2 W
+    = score_summary(@assessment_hash,@post)

@@ -1,0 +1,34 @@
+%fieldset.index-list
+  %legend 
+    -if @assessoring
+      = "Listing Assessors for #{@assessoring.class.name}"
+      = link_to "New Assessor", new_assessor_stage_path(@assessoring)
+    - else
+      Listing All Assessors
+
+  %table
+    %tr.list-header
+      %th Assessing type
+      %th Assessing
+      %th Assessed model
+      %th Name
+      %th Status
+      %th Instructions
+      %th Method
+      %th Actions
+
+    - @assessors.each do |assessor|
+      %tr
+        %td= assessor.assessoring_type
+        %td= assessor.assessoring_id
+        %td= assessor.assessed_model
+        %td= assessor.name
+        %td= assessor.status
+        %td= assessor.instructions
+        %td= assessor.method
+        %td
+          = link_to 'Show', assessor
+          = link_to 'Edit', edit_assessor_path(assessor)
+          = link_to 'Destroy', assessor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

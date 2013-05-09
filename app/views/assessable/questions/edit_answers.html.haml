@@ -1,0 +1,115 @@
+%fieldset.show-list
+  %legend Question
+  %p#notice= notice
+  .f-left
+    %p
+      %b Assessment:
+      = @question.assessment_id
+    %p
+      %b Sequence:
+      = @question.sequence
+    %p
+      %b Question text:
+      = @question.question_text
+    %p
+      %b Short name:
+      = @question.short_name
+    %p
+      %b Instructions:
+      = @question.instructions
+    %p
+      %b Group header:
+      = @question.group_header
+  .f-left
+    %p
+      %b Answer tag:
+      = @question.answer_tag
+    %p
+      %b Answer layout:
+      = @question.answer_layout
+    %p
+      %b Weight:
+      = @question.weight
+    %p
+      %b Critical:
+      = @question.critical
+    %p
+      %b Min critical:
+      = @question.min_critical
+    %p
+      %b Score method:
+      = @question.score_method
+    %p
+      %b Key:
+      = @question.key
+  .f_clear
+  .navbar
+
+    = link_to 'Edit', edit_question_path(@question)
+    \|
+    = link_to 'Assessment', assessment_path(@question.assessment_id)
+ 
+  = form_for(@question) do |f|
+    - texteval = (@question.score_method == "TextContains") || (@question.score_method == "TextNumeric")
+    - if @question.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@question.errors.count, "error")
+          prohibited this question from being saved:
+        %ul
+          - @question.errors.full_messages.each do |msg|
+            %li= msg
+    .index-list
+      .actions
+        = f.submit
+        %span
+          = @question.question_text.html_safe
+      %table
+        %tr.list-header
+          %th Seq
+          %th
+            Answer Text/Short Name#{texteval ? "/Text Eval" : ""}
+          %th Value
+          %th &check; Other Question
+          %th Delete
+        - alt = true
+        = f.fields_for :answers do |builder|
+          - alt = !alt
+          - new_ans = builder.object[:id].nil? ? "New " : ""
+          <tr #{raw alt ? "class=\"alt\"" : ""}>
+          %td
+            = builder.text_field :sequence ,:size => 2
+          %td
+            %span.index-label
+              = new_ans
+              Answer:
+            = builder.text_field :answer_text, :size => 50
+            %br/
+            %span.index-label Short Name:
+            = builder.text_field :short_name, :size => 20
+          %td
+            = builder.text_field :value, :size => 2
+          %td
+            = builder.check_box :requires_other
+            = builder.text_field :other_question, :size => 40
+          %td
+            %span
+              - if !builder.object.answer_text.nil?
+                = builder.check_box :_destroy, :"data-confirm" => "Are you sure?"
+                = builder.label :_destroy, "Delete"
+              - else
+                \&nbsp;
+          - if  texteval
+            - behavior = @question.score_method == "TextContains" ? "edit_contains" : "edit_numeric"
+            - partial = @question.score_method == "TextContains" ? "contains" : "numeric"
+            %tr
+              %td &nbsp;
+              %td{:colspan => "3"}
+                %span.index-label Text Eval:
+                = builder.text_field :text_eval, :size => 110
+              %td
+                =link_to_function "Edit Helper",nil,"data-behavior" => behavior, :id => "eval_#{builder.object.sequence}", :class => "edit-button"
+            %tr{id: "eval_#{builder.object.sequence}_div",:style => "display:none"}
+              %td &nbsp;
+              %td{:colspan => "4"}
+                = render partial: partial, :locals => {:text_eval => builder.object.text_eval, :seq => builder.object.sequence}

@@ -1,0 +1,7 @@
+= render "sidebar"
+%fieldset
+  %legend
+    Section - #{@info["names"][@info["idx"]]}
+  = form_tag post_take_path(@info["idx"]), :method => :put, :id => "assessarea", :name => "assessarea", :"data-behavior" => "validateRequired"
+  = Assessing::Display.new.assessment(@published,@post)
+  %input{:name => "submit", :type => "submit", :value => "Continue"}/

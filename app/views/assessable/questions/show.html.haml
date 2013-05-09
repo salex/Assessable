@@ -1,0 +1,54 @@
+%fieldset.show-list
+  %legend Question
+  %p#notice= notice
+  .f-left
+    %p
+      %b Assessment:
+      = @question.assessment_id
+    %p
+      %b Sequence:
+      = @question.sequence
+    %p
+      %b Question text:
+      = @question.question_text
+    %p
+      %b Short name:
+      = @question.short_name
+    %p
+      %b Instructions:
+      = @question.instructions
+    %p
+      %b Group header:
+      = @question.group_header
+  .f-left
+    %p
+      %b Answer tag:
+      = @question.answer_tag
+    %p
+      %b Answer layout:
+      = @question.answer_layout
+    %p
+      %b Weight:
+      = @question.weight
+    %p
+      %b Critical:
+      = @question.critical
+    %p
+      %b Min critical:
+      = @question.min_critical
+    %p
+      %b Score method:
+      = @question.score_method
+    %p
+      %b Key:
+      = @question.key
+  .f_clear
+  .navbar
+
+    = link_to 'Edit', edit_question_path(@question)
+    \|
+    = link_to 'Assessment', assessment_path(@question.assessment_id)
+    \|
+    = link_to 'Clone Question', clone_question_path(@question), :data => { :confirm => 'Are you sure?' }
+ 
+  = render :template => "assessable/answers/index"

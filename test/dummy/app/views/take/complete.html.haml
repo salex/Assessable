@@ -1,0 +1,7 @@
+= render "sidebar"
+%fieldset
+  %legend I be threw
+  = form_tag finish_take_path(params[:id]), :method => :put, :id => "assessarea", :name => "assessarea", :"data-behavior" => "validateRequired"
+  You be done, but you can go back by clicking on the link in the left side-bar
+  %input{:name => "submit", :type => "submit", :value => "Finish"}/
+= @info.inspect

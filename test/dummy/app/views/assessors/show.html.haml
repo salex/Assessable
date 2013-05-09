@@ -1,0 +1,30 @@
+%p#notice= notice
+.show-list
+  %p
+    %b Assessing type:
+    = @assessor.assessoring_type
+  %p
+    %b Assessing:
+    = @assessor.assessoring_id
+  %p
+    %b Assessed model:
+    = @assessor.assessed_model
+  %p
+    %b Name:
+    = @assessor.name
+  %p
+    %b Status:
+    = @assessor.status
+  %p
+    %b Instructions:
+    = @assessor.instructions
+  %p
+    %b Method:
+    = @assessor.method
+
+.navbar
+  = link_to 'Edit', edit_assessor_path(@assessor)
+  \|
+  = link_to 'Back', assessors_path
+  
+= render :template => "assessor_sections/index"

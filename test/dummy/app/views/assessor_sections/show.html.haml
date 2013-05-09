@@ -1,0 +1,41 @@
+%p#notice= notice
+.show-list
+  %p
+    %b Assessor:
+    = @assessor_section.assessor_id
+  %p
+    %b Assessment:
+    = @assessor_section.assessment_id
+  %p
+    %b Sequence:
+    = @assessor_section.sequence
+  %p
+    %b Name:
+    = @assessor_section.name
+  %p
+    %b Status:
+    = @assessor_section.status
+  %p
+    %b Instructions:
+    = @assessor_section.instructions
+  %p
+    %b Category:
+    = @assessor_section.category
+  %p
+    %b Max:
+    = @assessor_section.max
+  %p
+    %b Weighted:
+    = @assessor_section.weighted
+  %p
+    %b Published:
+    = !@assessor_section.published.nil?
+  %p
+    %b Published at:
+    = @assessor_section.published_at
+.navbar
+  = link_to 'Edit', edit_assessor_section_path(@assessor_section)
+  \|
+  = link_to 'Back', assessor_path(@assessor_section.assessor)
+.related
+  = render template: "scores/index"

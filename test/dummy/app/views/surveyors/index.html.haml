@@ -1,0 +1,31 @@
+%fieldset.index-list
+  %legend Listing surveyors
+
+  %table
+    %tr.list-header
+      %th Assessment
+      %th Name
+      %th Published
+      %th Version
+      %th Category
+      %th Sequence
+      %th
+      %th
+      %th
+
+    - @surveyors.each do |surveyor|
+      %tr
+        %td= surveyor.assessment_id
+        %td= surveyor.name
+        %td= surveyor.published_assessment.nil?
+        %td= surveyor.version_at
+        %td= surveyor.category
+        %td= surveyor.sequence
+        %td= link_to 'Show', surveyor
+        %td= link_to 'Edit', edit_surveyor_path(surveyor)
+        %td= link_to 'Destroy', surveyor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Surveyor', new_surveyor_path
+  = session.inspect

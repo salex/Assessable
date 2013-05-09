@@ -1,0 +1,33 @@
+%fieldset.index-list
+  %legend Listing assessments
+
+  %table
+    %tr.list-header
+      %th Name
+      %th Category
+      %th Keys
+      %th Tag
+      %th Layout
+      %th Raw
+      %th Weighted
+      %th Status
+      %th Actions
+
+    - @assessments.each do |assessment|
+      %tr
+        %td= assessment.name
+        %td= assessment.category
+        %td= assessment.assessing_key
+        %td= assessment.default_tag
+        %td= assessment.default_layout
+        %td= assessment.max_raw
+        %td= assessment.max_weighted
+        %td= assessment.status
+        %td
+          = link_to 'Show', assessment
+          = link_to 'Edit', edit_assessment_path(assessment)
+          = link_to 'Destroy', assessment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .navbar
+
+    = link_to 'New Assessment', new_assessment_path

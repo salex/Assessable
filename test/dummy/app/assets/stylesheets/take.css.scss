@@ -1,0 +1,39 @@
+// Place all the styles related to a Take controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://satake-lang.com/
+
+$background-color: #fff;
+$border-color: #95A6D0;
+$group-background-color: #d7deef;
+$inline-border-color: #aaa;
+$inline-background-color: #d7deef;
+
+#take_assessment {
+  font-family: arial,helvetica,sans-serif;
+  font-size:1.1em;
+  margin-left:10px;
+  background-color:$background-color;
+  .take-instructions {font-weight:normal;font-style:italic;background-color:#d7deef}
+  .take-questions {margin-left:1em;padding:4px 0 4px;}
+  .take-question {margin-left:0.5em;padding:4px 0 8px;border-top:dotted 1px $border-color ;}
+  .take-question td {padding-right:1em;vertical-align:top;}
+  .take-question-instructions {font-weight:normal;font-style:italic;}
+  .take-other-question {font-weight:normal;font-style:italic;font-size:.8em;display:none;margin-left:2em;}
+  .take-list-answer {margin-left:1em;}
+  .take-group-header { background-color: $group-background-color;font-weight:bold;font-style:italic;}
+  .take-annotate {font-weight:normal;font-style:italic;font-size:.8em;}
+  .take-answers, .take-indent {margin-left:0.5em;}
+  table.take-list {margin-left:0.5em;}
+  span.take-inline-answer {border: solid 1px $inline-border-color!important; background: $inline-background-color!important;white-space:nowrap!important; padding:1px 4px!important;}
+  .take-question-text { font-weight:bold;}
+
+  /* simple validation */
+  .validation-error {border:solid 2px red;margin:4px;padding:4px;background-color: #ffbbbb;}
+  .validation-advice { margin: 0 1em; padding: 2px; background-color: #FF3300!important; color: #FFF; font-weight: bold; }
+
+  .custom-advice { margin: 5px 0; padding: 5px; background-color: #C8AA00; color: #FFF; font-weight: bold; }
+
+  textarea.required { background-color: #F7EFCC; }
+  select.required {background-color: #F7EFCC;}
+  input.required { background-color: #F7EFCC; }
+}

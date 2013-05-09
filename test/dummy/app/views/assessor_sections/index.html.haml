@@ -1,0 +1,47 @@
+%fieldset.index-list
+  %legend 
+    Listing assessor_sections
+
+  %table
+    %tr.list-header
+      %th Assessment
+      %th Sequence
+      %th Name
+      %th Status
+      %th Category
+      %th Max
+      %th Weighted
+      %th Published at
+      %th Actions
+
+    - @assessor_sections.each do |assessor_section|
+      %tr
+        %td
+          - if assessor_section.assessment_id
+            = assessor_section.assessment_id
+          - else
+            = link_to "Search"
+        %td= assessor_section.sequence
+        %td= assessor_section.name
+        %td= assessor_section.status
+        %td= assessor_section.category
+        %td= assessor_section.max
+        %td= assessor_section.weighted
+        %td
+          = assessor_section.published_at
+          - if assessor_section.assessment_stale? && assessor_section.status.downcase.include?("active")
+            %br/
+            %span.annotate
+              Assessment version does not match.
+              %br/
+              = link_to "Edit", edit_assessor_section_path(assessor_section)
+              to update or archive.
+          
+        %td
+          = link_to 'Show', assessor_section
+          = link_to 'Edit', edit_assessor_section_path(assessor_section)
+          = link_to 'Destroy', assessor_section, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .navbar
+
+    = link_to 'New Assessor section', new_assessor_assessor_section_path(@assessor)

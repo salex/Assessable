@@ -1,0 +1,16 @@
+$menu-color: #223B8E;
+$container-color: #95A6D0;
+$light-color: #778EC2;
+$lighter-color: #d7deef;
+
+$medium-color: #586BAE;
+$mybody-color: #1B2E4B;
+$darker-color: #1B2E4B;
+$dark-color: #3A5497;
+$alt-color: #D1D7E6;
+$content-color: #D1D7E6;
+@mixin rounded-corners($radius) {  
+  border-radius: $radius;  
+  -moz-border-radius: $radius;  
+  -webkit-border-radius: $radius;  
+}  

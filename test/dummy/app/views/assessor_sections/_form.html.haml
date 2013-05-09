@@ -1,0 +1,69 @@
+= form_for @assessor_section do |f|
+  - if @assessor_section.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@assessor_section.errors.count, "error")} prohibited this assessor_section from being saved:"
+      %ul
+        - @assessor_section.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :assessor_id
+    = f.hidden_field :assessor_id if @assessor_section.id.nil?
+    = @assessor_section.assessor_id
+  .field
+    = f.label :assessment_id
+    = f.hidden_field :assessment_id if @assessor_section.id.nil?
+    = @assessor_section.assessment_id
+  .field
+    = f.label :sequence
+    = f.number_field :sequence
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :instructions
+    = f.text_field :instructions
+  .field
+    = f.label :category
+    = f.text_field :category
+  - unless @assessor_section.id.nil?
+    .field
+      %label Max
+      = @assessor_section.max
+    .field
+      %label Weighted
+      = @assessor_section.weighted
+    .field
+      %label Published
+      = !@assessor_section.published.nil?
+    .field
+      %label Published_at
+      = @assessor_section.published_at
+    - if  !@assessor_section.id.nil?  && @assessor_section.status.include?("active") && @assessor_section.assessment_stale?
+      .box
+        %p
+          The published version of the assessors assessment does not match the assessment version. Please
+          investigate. If the assessment was changed, you have several options.
+        %ul
+          %li
+            = radio_button_tag :stale, "publish"
+            Publish the new version of the assessment to this assessor.
+            %br/
+            %span.annotate
+              This could require that all scores using this version be re-scored. This
+              depends on the significance of the assessment changes.
+          %li
+            = radio_button_tag :stale, "clone"
+            Archive this assessor and clone a new version.
+            %br/
+            %span.annotate
+              Any new assessments will use the new version. Any updates that used the old version will use the
+              archived version.
+          %li
+            = radio_button_tag :stale, "ignore"
+            Ignore the update and investigate
+  .actions
+    = f.submit 'Save'

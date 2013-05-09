@@ -1,0 +1,53 @@
+%fieldset.show-list
+  %legend Assessment
+
+  %p#notice= notice
+
+  %p
+    %b Name:
+    = @assessment.name
+  %p
+    %b Category:
+    = @assessment.category
+  %p
+    %b Description:
+    %textarea= @assessment.description
+  %p
+    %b Instructions:
+    %textarea
+      = @assessment.instructions
+  %p
+    %b Key:
+    = @assessment.key
+  %p
+    %b Assessing Key:
+    = @assessment.assessing_key
+  
+  %p
+    %b Default tag:
+    = @assessment.default_tag
+  %p
+    %b Default layout:
+    = @assessment.default_layout
+  %p
+    %b Max raw:
+    = @assessment.max_raw
+  %p
+    %b Max weighted:
+    = @assessment.max_weighted
+  %p
+    %b Status:
+    = @assessment.status
+  
+  .navbar
+  
+    = link_to 'Edit', edit_assessment_path(@assessment)
+    \|
+    = link_to 'Assessments', assessments_path
+    \|
+    = link_to 'Display', display_assessment_path
+    \|
+    = link_to 'Clone Assessment', clone_assessment_path, :data => { :confirm => 'Are you sure?' }
+    
+
+  = render :template => "assessable/questions/index"

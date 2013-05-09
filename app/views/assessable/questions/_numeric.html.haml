@@ -1,0 +1,23 @@
+- text_eval = text_eval.nil? ? "" : text_eval
+- @obj = Assessable::TextEval::Numeric.new(text_eval)
+.form-list
+  %table
+    %tr
+      %th Match
+      %td{:colspan => 3}= text_field_tag "numeric_match_#{seq}",@obj.match,size: 12
+    - dcnt = 0
+    -@obj.deltas.each do |delta,perc|
+      - dcnt += 1
+      %tr
+        %th Delta
+        %td= text_field_tag "delta_#{seq}_#{dcnt}",delta,size: 12, class: "seq_#{seq}_delta"
+        %th Percent
+        %td= text_field_tag "percent_#{seq}_#{dcnt}",perc,size: 12, class: "seq_#{seq}_percent"
+    %tr
+      %th New Delta
+      %td= text_field_tag "delta_#{seq}_#{dcnt+1}","",size: 12, class: "seq_#{seq}_delta"
+      %th New Percent
+      %td= text_field_tag "percent_#{seq}_#{dcnt+1}","",size: 12, class: "seq_#{seq}_percent"
+  = button_to_function "Update Numeric Eval",nil, :id => "seq_#{seq}_update", "data-behavior" => "numeric_update"
+  = link_to_function "Cancel",nil, :id => "seq_#{seq}_cancel", "data-behavior" => "numeric_cancel", :class => "breadcrumb"
+      

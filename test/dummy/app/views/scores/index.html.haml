@@ -1,0 +1,28 @@
+%fieldset.index-list
+  %legend Listing scores
+
+  %table
+    %tr.list-header
+      %th Assessor
+      %th Assessed
+      %th Status
+      %th Raw
+      %th Weighted
+      %th Answers
+      %th Sect/Stat
+      %th Actions
+
+    - @scores.each do |score|
+      %tr
+        %td= score.assessor_section.name
+        %td= score.assessed.name
+        %td= score.status
+        %td= score.raw
+        %td= score.weighted
+        %td= score.answers
+        %td= score.assessor_section.status
+        %td
+          = link_to 'Show', score
+          = link_to 'Edit', edit_score_path(score)
+          = link_to 'Destroy', score, :method => :delete, :data => { :confirm => 'Are you sure?' }
+

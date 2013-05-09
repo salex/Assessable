@@ -1,0 +1,442 @@
+#^[^i].+id:.+\n
+#default_answer_tag > default_tag
+#default_display > default_layout
+#answer_layout > answer_layout
+#min_critical > min_critical
+"---
+category: application.test
+default_tag: ''
+default_layout: List
+description: An example assessment that tests all the current features.
+instructions: Please answer all these silly questions to the best of your ability.
+key: Assessor.Stage.1.application.silly
+max_raw: 53.0
+max_weighted: 94.0
+name: Silly Test
+status: Master
+questions:
+- answer_tag: Select
+  critical: true
+  group_header: ''
+  instructions: ''
+  key: t01
+  min_critical: 1.0
+  question_text: What do you think about the state of the world?
+  score_method: Value
+  sequence: 1
+  short_name: World State
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: No opinion
+    key: t0101
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+  - answer_text: Limited opinion
+    key: t0102
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: Okay
+    key: t0103
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: ''
+    value: 3.0
+  - answer_text: Great
+    key: t0104
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: ''
+    value: 5.0
+  - answer_text: Weak
+    key: t0105
+    other_question: What is missing?
+    requires_other: true
+    sequence: 5
+    short_name: ''
+    text_eval: ''
+    value: 2.0
+  - answer_text: Crap
+    key: t0106
+    other_question: What make it a crappy?
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: ''
+    value: 6.0
+  - answer_text: ! 'Zilch '
+    key: t0107
+    other_question: What make it a zilch?
+    requires_other: false
+    sequence: 7
+    short_name: ''
+    text_eval: ''
+    value: 10.0
+- answer_tag: Checkbox
+  critical: false
+  group_header: Please select all answers that apply
+  instructions: ''
+  key: t02
+  min_critical: -1.0
+  question_text: Who made your car(s)
+  score_method: Sum
+  sequence: 2
+  short_name: aids checkbox sum
+  answer_layout: Inline
+  weight: 5.0
+  answers:
+  - answer_text: GM
+    key: t0201
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: Chrysler
+    key: t0202
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: Ford
+    key: t0203
+    other_question: Do you trust the Microsoft thingie?
+    requires_other: true
+    sequence: 3
+    short_name: ''
+    text_eval: ''
+    value: 3.0
+  - answer_text: Japanese
+    key: t0204
+    other_question: Does you pedal stick to the metal?
+    requires_other: true
+    sequence: 4
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: Other
+    key: t0205
+    other_question: Who made it?
+    requires_other: true
+    sequence: 5
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: t03
+  min_critical: -1.0
+  question_text: What is the best way?
+  score_method: Value
+  sequence: 3
+  short_name: best way
+  answer_layout: list
+  weight: 3.0
+  answers:
+  - answer_text: Slow
+    key: t0301
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: Hard
+    key: t0302
+    other_question: Tell me why hard is the best way?
+    requires_other: true
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 2.0
+  - answer_text: Fast
+    key: t0303
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: ''
+    value: 3.0
+  - answer_text: Easy
+    key: t0304
+    other_question: Tell me why easy is the best way?
+    requires_other: true
+    sequence: 4
+    short_name: ''
+    text_eval: ''
+    value: 4.0
+  - answer_text: None
+    key: t0305
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: ''
+    value: 5.0
+- answer_tag: Text
+  critical: true
+  group_header: Oh my
+  instructions: You know I really miss playing golf.
+  key: t04
+  min_critical: 1.0
+  question_text: What do you do when you are not working? Hobbies, etc.
+  score_method: TextContains
+  sequence: 4
+  short_name: Text Eval
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: Enter text
+    key: t0401
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: hobbies
+    text_eval: ! '!(golf|fish|hunt)'
+    value: 2.0
+- answer_tag: Textarea
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: t05
+  min_critical: -1.0
+  question_text: Please describe the history of the world
+  score_method: Value
+  sequence: 5
+  short_name: Textarea
+  answer_layout: list
+  weight: 1.0
+  answers:
+  - answer_text: In one paragraph
+    key: t0501
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: none
+    text_eval: ''
+    value: 1.0
+- answer_tag: Select-multiple
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: t06
+  min_critical: 0.0
+  question_text: What is your favorite team?
+  score_method: sum
+  sequence: 6
+  short_name: multi select
+  answer_layout: list
+  weight: 1.0
+  answers:
+  - answer_text: Steelers
+    key: t0601
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 5.0
+  - answer_text: ASU
+    key: t0602
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 4.0
+  - answer_text: Alabama
+    key: t0603
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: ''
+    value: 3.0
+  - answer_text: Auburn
+    key: t0604
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: t08
+  min_critical: 0.0
+  question_text: Please rate the ease of filling out this applications from 1 being
+    very difficult to 5 being very easy
+  score_method: Value
+  sequence: 8
+  short_name: survey
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: t0801
+    other_question: Why so low? Are you dumb?
+    requires_other: true
+    sequence: 1
+    short_name: bad
+    text_eval: ''
+    value: 1.0
+  - answer_text: '2'
+    key: t0802
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: poor
+    text_eval: ''
+    value: 2.0
+  - answer_text: '3'
+    key: t0803
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: fair
+    text_eval: ''
+    value: 3.0
+  - answer_text: '4'
+    key: t0804
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: good
+    text_eval: ''
+    value: 4.0
+  - answer_text: '5'
+    key: t0805
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: great
+    text_eval: ''
+    value: 5.0
+- answer_tag: Text
+  critical: true
+  group_header: ''
+  instructions: ''
+  key: t09
+  min_critical: 1.0
+  question_text: What are the nouns and at least one adjective in the following sentence?
+  score_method: TextContains
+  sequence: 9
+  short_name: Completion score
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: ! 'The quick brown fox jumps the lazy dogs back. '
+    key: t0901
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: Typing test
+    text_eval: (quick|brown|lazy)&fox&back&!(the|jump|dog)::2>>0&brown>>0
+    value: 4.0
+- answer_tag: Text
+  critical: true
+  group_header: ''
+  instructions: ''
+  key: t10
+  min_critical: 1.0
+  question_text: What is the value of Pi (&#960;) to 4 decimal places
+  score_method: TextNumeric
+  sequence: 10
+  short_name: Numeric score
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: ! 'Hint: It is bigger than 3 and smaller than 4.'
+    key: t1001
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 3.1416+-.000025+-.0001::1+-.001::4
+    value: 2.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: t11
+  min_critical: 0.0
+  question_text: Is it worth it?
+  score_method: Value
+  sequence: 11
+  short_name: worth
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: t1101
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: Y
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: t1102
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: N
+    text_eval: ''
+    value: 2.0
+- answer_tag: Text
+  critical: true
+  group_header: Please provide the part of speech of  the following sentence.
+  instructions: Where is this going to go
+  key: t12
+  min_critical: 2.0
+  question_text: ! ' \"The quick brown fox jumps the laze dogs back.\"'
+  score_method: TextContains
+  sequence: 12
+  short_name: parts of speech
+  answer_layout: List
+  weight: 2.0
+  answers:
+  - answer_text: Noun(s)
+    key: t1201
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: nouns
+    text_eval: fox&back
+    value: 1.0
+  - answer_text: Verb(s)
+    key: t1202
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: Verbs
+    text_eval: jumps
+    value: 1.0
+  - answer_text: At least one adjective
+    key: t1203
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: adjective
+    text_eval: (quick|brown|lazy)
+    value: 1.0
+"

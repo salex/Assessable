@@ -1,0 +1,13 @@
+%fieldset
+  %legend Instructions
+  .box
+    %p
+      This is just an example of how an assessment could be displayed.
+    %p
+      %span.annotate
+        If there were multiple sections/assessments, this area would show the status in some form. There are #{@info["sections"].count} sections
+    %ul.inline
+      = section_links(@info)
+    %span.annotate
+      If you are missing some information in order to #{@info["controller"]}, you can #{link_to "Cancel", cancel_take_path} at
+      any point and return later. Problem is you have to start over.

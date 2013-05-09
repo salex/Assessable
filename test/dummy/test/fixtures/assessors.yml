@@ -1,0 +1,20 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  assessoring_type: MyString
+  assessoring_id: 1
+  assessed_model: MyString
+  name: MyString
+  status: MyString
+  instructions: MyString
+  method: MyString
+
+two:
+  assessoring_type: MyString
+  assessoring_id: 1
+  assessed_model: MyString
+  name: MyString
+  status: MyString
+  instructions: MyString
+  method: MyString

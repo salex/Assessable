@@ -1,0 +1,33 @@
+%p#notice= notice
+.show-list
+  %p
+    %b Assessor section:
+    = @score.assessor_section_id
+  %p
+    %b Assessed type:
+    = @score.assessed_type
+  %p
+    %b Assessed:
+    = @score.assessed_id
+  %p
+    %b Status:
+    = @score.status
+  %p
+    %b Raw:
+    = @score.raw
+  %p
+    %b Weighted:
+    = @score.weighted
+  %p
+    %b Scoring:
+    = @score.scoring
+  %p
+    %b Answers:
+    = @score.answers
+  %p
+    %b Category:
+    = @score.category
+.action-bar
+  = link_to 'Edit', edit_score_path(@score)
+  \|
+  = link_to 'Back', scores_path

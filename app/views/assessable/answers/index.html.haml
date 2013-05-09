@@ -1,0 +1,36 @@
+%fieldset.index-list
+
+  %legend 
+    Question Answers
+    = link_to 'New Answer', new_question_answer_path(@question)
+    / - if (@question.score_method =~ /text/i).nil?
+    \|
+    = link_to 'Edit/Add Answers', edit_answers_question_path(@question) 
+    
+    
+  %table
+    %tr.list-header
+      %th Seq
+      %th Answer text
+      %th Short name
+      %th Value
+      %th Requires other
+      %th Other question
+      %th Text eval
+      %th Actions
+
+    - @answers.each do |answer|
+      %tr
+        %td= answer.sequence
+        %td= answer.answer_text
+        %td= answer.short_name
+        %td= answer.value
+        %td= answer.requires_other
+        %td= answer.other_question
+        %td= answer.text_eval
+        %td
+          = link_to 'Show', answer
+          = link_to 'Edit', edit_answer_path(answer)
+          = link_to 'Destroy', answer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

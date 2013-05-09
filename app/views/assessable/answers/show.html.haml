@@ -1,0 +1,35 @@
+%fieldset.show-list
+  %legend Answer
+  %p#notice= notice
+
+  %p
+    %b Question:
+    = @answer.question_id
+  %p
+    %b Sequence:
+    = @answer.sequence
+  %p
+    %b Answer text:
+    = @answer.answer_text
+  %p
+    %b Short name:
+    = @answer.short_name
+  %p
+    %b Value:
+    = @answer.value
+  %p
+    %b Requires other:
+    = @answer.requires_other
+  %p
+    %b Other question:
+    = @answer.other_question
+  %p
+    %b Text eval:
+    = @answer.text_eval
+  %p
+    %b Key:
+    = @answer.key
+.navbar
+  = link_to 'Edit', edit_answer_path(@answer)
+  \|
+  = link_to 'Question', question_path(@answer.question_id)

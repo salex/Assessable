@@ -1,0 +1,40 @@
+= form_for @answer do |f|
+  - if @answer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@answer.errors.count, "error")} prohibited this answer from being saved:"
+      %ul
+        - @answer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :question_id
+    = f.hidden_field :question_id if @answer.id.nil?
+    = @answer.question_id
+  .field
+    = f.label :sequence
+    = f.number_field :sequence
+  .field
+    = f.label :answer_text
+    = f.text_field :answer_text
+  .field
+    = f.label :short_name
+    = f.text_field :short_name
+  .field
+    = f.label :value
+    = f.text_field :value
+  .field
+    = f.label :requires_other
+    = f.check_box :requires_other
+  .field
+    = f.label :other_question
+    = f.text_field :other_question
+  - if !(@question.score_method =~ /text/i).nil?
+  
+    .field
+      = f.label :text_eval
+      = f.text_area :text_eval, rows: 3
+  .field
+    = f.label :key
+    = f.text_field :key
+  .actions
+    = f.submit 'Save'

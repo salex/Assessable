@@ -1,0 +1,51 @@
+= @question.inspect
+= form_for @question do |f|
+  - if @question.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
+      %ul
+        - @question.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :assessment_id
+    = f.hidden_field :assessment_id if @question.id.nil?
+    = @question.assessment_id
+  .field
+    = f.label :sequence
+    = f.number_field :sequence
+  .field
+    = f.label :question_text
+    = f.text_area :question_text, :rows => 3
+  .field
+    = f.label :short_name
+    = f.text_field :short_name
+  .field
+    = f.label :instructions
+    = f.text_area :instructions, :rows => 3
+  .field
+    = f.label :group_header
+    = f.text_area :group_header, :rows => 3
+  .field
+    = f.label :answer_tag
+    = f.select :answer_tag, answer_type_options(@question.answer_tag)
+  .field
+    = f.label :answer_layout
+    = f.select :answer_layout, display_type_options(@question.answer_layout)
+  .field
+    = f.label :weight
+    = f.text_field :weight
+  .field
+    = f.label :critical
+    = f.check_box :critical
+  .field
+    = f.label :min_critical
+    = f.text_field :min_critical
+  .field
+    = f.label :score_method
+    = f.select :score_method, score_method_options(@question.score_method)
+  .field
+    = f.label :key
+    = f.text_field :key
+  .actions
+    = f.submit 'Save'

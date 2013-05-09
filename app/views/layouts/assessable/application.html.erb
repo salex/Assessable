@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assessable</title>
+  <%= stylesheet_link_tag    "assessable/application", :media => "all" %>
+  <%= javascript_include_tag "assessable/application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="mybody">
+  <div id="container">
+    <div id="header">Assessable</div>
+    <div class="navbar">
+      <%= link_to "Home", root_path%> |
+       <%= link_to "Assessments", assessments_path %> |
+       <%=link_to "Dummy Home", "/"%>
+    </div>
+    <div id="content">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "#{name}" %>
+      <% end%>
+      
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

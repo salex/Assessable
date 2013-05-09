@@ -1,0 +1,50 @@
+@import "mixins.css.scss";
+
+.index-list {
+  table {width: 100%; }
+  table.w50 {  width: 49%; }
+  td, th { padding: 2px 4px; border: dotted 1px #4040b0; }
+  tr { 
+    background: white; 
+    &.alt { background: $alt-color; }
+    &.list-header { 
+      background: $lighter-color; 
+      border: 1px solid $medium-color; 
+      td, th { font-weight: bold; text-align:left; }
+    }
+  }
+  caption {padding: 2px 4px;border: 1px solid $medium-color ; font-weight:bold;background-color:$content-color;}
+}
+
+.show-list {
+  p b {display:inline-block; width:10em;text-align:right;vertical-align:top;}
+  p {background-color:#fff;margin-bottom:2px;}
+  table { 
+    border: solid 1px #8888aa; 
+    margin-right:2px;
+    &.w50 {  width: 49%; }
+    &.w33 {  width: 32%; }
+    caption {padding: 2px 4px;border: 1px solid $medium-color; display:inline ; font-weight:bold;background-color:$content-color;}
+    td, th { padding: 4px; }
+    td.w75, th.w75 { width:75%; }
+    td.w33, th.w33 { width:33%; }
+    tr { background: white; border-bottom: dotted 1px $mybody-color; }
+    th { background: #C6CCDC; font-weight: bold; text-align: right;  }
+    td.green { background: $light-color;}
+  }
+  .header { background: $light-color; padding: 4px; }
+}
+
+.form-list table { border: solid 1px $medium-color;font-size:.9em; }
+.form-list div.validate { float: left; border: none; margin: 0; padding: 0; margin-right: 4px; }
+.form-list th, .form-list td.label { width: 10em; padding: 2px 6px 2px 2px; background: #C6CCDC; border: none; text-align: right; font-weight: bold; 
+  border-right: solid 2px $container-color; margin-right: 4px; vertical-align: top; }
+.form-list th.t-left { width: 10em; padding: 2px 6px 2px 2px; background: #e0e0e0; border: none; text-align: left; font-weight: bold; 
+  border-right: solid 2px $container-color; margin-right: 4px; vertical-align: top; }
+.form-list td { background: #f8f8f8; padding: 2px 6px 2px 2px; }
+.form-list td.actions { background: $medium-color; padding: 2px 6px 2px 2px; }
+.form-list tr { margin-top: 2px; padding: 0px; background-color: #f8f8f8; border-bottom: solid 2px #8ac; }
+.form-list tr.annotate td {font-family: "arial"!important ;background-color: #eee!important;font-weight:bold}
+.form-list tr.header th {text-align:left;}
+
+

@@ -1,0 +1,9 @@
+%fieldset
+  %legend Editing Answer
+
+  = render 'form'
+
+.navbar
+  = link_to 'Show', @answer
+  \|
+  = link_to 'Question', question_path(@answer.question_id)

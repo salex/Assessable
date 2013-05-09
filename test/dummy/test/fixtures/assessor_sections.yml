@@ -1,0 +1,28 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  assessor_id: 1
+  assessment_id: 1
+  sequence: 1
+  name: MyString
+  status: MyString
+  instructions: MyString
+  category: MyString
+  max: 1.5
+  weighted: 1.5
+  published: MyText
+  published_at: 2013-04-22 13:46:09
+
+two:
+  assessor_id: 1
+  assessment_id: 1
+  sequence: 1
+  name: MyString
+  status: MyString
+  instructions: MyString
+  category: MyString
+  max: 1.5
+  weighted: 1.5
+  published: MyText
+  published_at: 2013-04-22 13:46:09

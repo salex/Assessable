@@ -1,0 +1,37 @@
+= form_for @score do |f|
+  - if @score.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@score.errors.count, "error")} prohibited this score from being saved:"
+      %ul
+        - @score.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :assessor_section_id
+    = f.number_field :assessor_section_id
+  .field
+    = f.label :assessed_type
+    = f.text_field :assessed_type
+  .field
+    = f.label :assessed_id
+    = f.text_field :assessed_id
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :raw
+    = f.text_field :raw
+  .field
+    = f.label :weighted
+    = f.text_field :weighted
+  .field
+    = f.label :scoring
+    = f.text_area :scoring
+  .field
+    = f.label :answers
+    = f.text_field :answers
+  .field
+    = f.label :category
+    = f.text_field :category
+  .actions
+    = f.submit 'Save'

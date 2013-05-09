@@ -1,0 +1,6 @@
+%fieldset
+  %legend Test Simulated Models 
+  %ul
+    - @stages.each do |stage|
+      %li
+        = link_to stage.name, stage_path(stage)

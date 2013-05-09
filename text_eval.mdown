@@ -1,0 +1,116 @@
+### Text Evaluation
+
+Text entered in a text field or text area can be scored. The text_eval field in the answer record allows you to set
+a formula to evaluate the answer that comes in from the assessment form. There are two methods of evaluation: Contains and Numeric.
+
+#### Numeric Evaluation
+
+Numeric evaluation allow you to see if the answer entered, converted to a number, matches the text_eval field, also converted
+to a number. This is primarily for use with floating point number. The formula optionally has a delta range value
+that allow for decimal point precision.
+
+An example question:
+
+* What is the value of Pi, rounded to 4 decimal places?
+  * text_eval set to "3.1416"
+  * Only an input of "3.1416" will evaluate to true.
+  
+There are some potential problems using floating point number. Some number when converted from text will not be exact.{example?}. To 
+guard against that, you can provide a delta value that will be added to and subtracted from the converted number and a range checked.
+
+* What is the value of Pi, rounded to 4 decimal places?
+  * text_eval set to "3.1416::0.00001"
+  * the input of "3.1416" will evaluate to true if after conversion it is in the range between 3.14159 to 3.14161.
+  * The :: (double colon) delimitates the match section from the deltas section
+
+You can also provide an optional partial credit percentage, represented as a whole number percentage.
+
+* text_eval set to "3.1416::0.00001%%100" is equivalent to "3.1416::0.00001" since the default percentage is 100%
+* text_eval set to "3.1416::0.00001%%80" would give 80% credit if the match was not exact, but  between 3.14159 to 3.14161.
+  * The %% (double percent) delimits the delta value from the percentage
+
+"3.1416" happens to convert exactly in floating point. If you use Pi often, you probably have in memorized to a certain precession.
+Pi is 3.141592 to six places. If that is what is entered because the user didn't RTFQ, they'd get 80% credit. 
+
+You can also have multiple deltas. Each delta is delimited by the same :: delimiter. The liberal evaluator could enter:
+
+* text_eval set to "3.1416::0.00001%%80::0.0001%%40::0.001:20"
+  * 100% if 3.1416 entered
+  * 80% if 3.14159 entered
+  * 40% if 3.14155 entered 
+  * 20% if 3.1415 entered 
+  
+Liberal evaluators are like our current teacher where close counts for everything, except in horseshoes!
+
+There is a Text Eval helper in the Edit/Add Answers form that allows you to just enter the match, deltas and percentages and it will create the formula.
+
+If you are evaluating integers or *exact* numbers, you can just use the Contains Evaluation.
+
+#### Contains Evaluation
+
+Contains evaluation uses a formula, that is converted to Regular Expression to see if a text answer matches the rules defined the formula.
+
+* What is the noun in the sentence "See Spot run."?
+  * text_eval set to "spot" (answers are converted to lowercase)
+  * Only the input of "spot" will evaluate to true.
+
+The evaluation can contain multiple words that are AND'd or phrases. It can also contain multiple words that are OR'd together
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to "spot jane" 
+  * Only the input of "jane spot" will evaluate to true.
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to "spot&jane". The and operator & (ampersand) delimitates words that must be in the answer
+  * Only the inputs of "jane spot" or "spot jane" will evaluate to true.
+
+* What US President said "Gorbachev, tear down this wall." in a famous speech?
+  * text_eval set to "ronald&reagan" 
+  * Only the input of "ronald reagan" or "reagan ronald " will evaluate to true.
+
+To Or words, they must be contain in () and have an OR operator | (vertical bar) between the words
+
+Again the liberal teacher.
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to ("spot|jane)" 
+  * The inputs of "jane spot", "spot jane", "jane", "spot" will evaluate to true.
+  
+They would say its close enough if they just enter one noun!
+
+Matches can also be negated using the NOT operator "!" (explanation point)
+The good teacher (probably conservative) would know that students are sometime smarter than you think.
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to ("spot&jane)&!see&!and&!run" 
+  * Any input containing "see" OR "and" OR "", "run" would NOT evaluate to true.
+  
+Like Numeric Evaluations, Contains Evaluation also provides a mechanism of giving partial credit. The :: eliminator  divide the formula into an Exact section and a Partial
+section.  The Partial section contains a match element and an percent element. The partial match element is just like the exact match. It can contain, AND's, OR's and NOT's.
+
+Again the liberal teacher decided they were being too liberal and decided to give only 50% credit if only one noun was entered.
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to ("spot&jane)::(spot|jane)%%50" 
+  * The inputs of "jane spot" would get 100%. The inputs of "jane" or "spot" would get 50% if an exact match was not found.
+  
+Again being a little smarter than the students, you repeat the not conditions.
+
+* What are the nouns in the sentence "See Jane and Spot run."?
+  * text_eval set to ("spot&jane)&!see&!and&!run::(spot|jane)&!see&!and&!run%%50" 
+  * Any input containing "see" OR "and" OR "", "run" would NOT evaluate to true.
+
+The is also a Text Eval helper that will help build the Contains formula. The form helper (or typing) will also allow an optional || (double OR operator) that allows
+you to OR groups of matches.
+
+* text_eval set to "spot||jane" is the same as "(spot|jane)"
+* text_eval set to "'some group of matches||another group of matches" allows for complicated matches that probably don't exist.
+
+
+
+
+
+  
+
+
+

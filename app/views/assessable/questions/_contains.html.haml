@@ -1,0 +1,54 @@
+- text_eval = text_eval.nil? ? "" : text_eval
+- @obj = Assessable::TextEval::Contains.new(text_eval)
+- fform = @obj.format_form
+.form-list
+  %table
+    - cnt = 0
+    - wcnt = 0
+    
+    /- logger.debug "group count #{fform["groups"].count} #{fform["groups"].inspect}"
+    -fform["groups"].each do |group|
+      - grp = true
+      /- logger.debug "group count #{cnt} #{group.inspect}"
+      - group.each do |w|
+        - wcnt += 1
+        /- logger.debug "count #{cnt} #{wcnt}"
+        %tr
+          %th Word(s)
+          %td
+            = text_field_tag "match_#{seq}_#{wcnt}", w["words"],size: 35, class: "seq_#{seq}_match"
+          %td
+            - if (cnt > 0 && grp)
+              - checked = true
+              - grp = false
+            -else
+              - checked = false
+            = check_box_tag "group_or_#{seq}_#{wcnt}", nil, checked
+            Or Group
+          %td
+            = check_box_tag "word_or_#{seq}_#{wcnt}", nil, w["or"]
+            Or Words
+          %td 
+            = check_box_tag "word_not_#{seq}_#{wcnt}", nil, w["not"]
+            Not Words
+      - cnt += 1
+      
+  %table
+    - wcnt = 0
+  
+    -fform["partials"].each do |p|
+      - wcnt += 1
+      %tr
+        %th Partial
+        %td= text_field_tag "partial_match_#{seq}_#{wcnt}", p["words"],size: 35, class: "seq_#{seq}_partial"
+        %th Percent
+        %td= text_field_tag "partial_percent_#{seq}_#{wcnt}", p["percent"],size: 4
+        %td
+          = check_box_tag "partial_or_#{seq}_#{wcnt}", nil,p["or"]
+          Or Words
+        %td 
+          = check_box_tag "partial_not_#{seq}_#{wcnt}", nil,p["not"]
+          Not Words
+  = button_to_function "Update Text Eval",nil, :id => "seq_#{seq}_update", "data-behavior" => "contains_update"
+  = link_to_function "Cancel",nil, :id => "seq_#{seq}_cancel", "data-behavior" => "contains_cancel", :class => "breadcrumb"
+      
