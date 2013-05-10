@@ -5,11 +5,8 @@ module Assessable
     attr_accessible :category, :default_layout, :default_tag, :description, :instructions, :key, :max_raw, :max_weighted, :name, :status, :assessing_key
   
   
-    def self.computeMax(id)
-      if id.nil?
-        return false
-      end
-      assessment = self.find(id)
+    def compute_max
+      assessment = self
       maxRaw = 0
       maxWeighted = 0
       for question in assessment.questions
@@ -43,15 +40,15 @@ module Assessable
           maxWeighted += (maxQues * weight)
         end
       end
-      logger.debug "UUUUUUUUUUUMMMMMMMMMAAAAAAAAAXXXXXXXXXX"
       assessment.max_raw = maxRaw
       assessment.max_weighted = maxWeighted
-      assessment.updated_at = Time.now
+      assessment.updated_at = Time.now  # force commit
       assessment.save
       return true
     end
   
     def publish(tojson = false)
+      compute_max
       #double parse to get ride of dates from hash
       hash = self.as_json(:except => [:created_at, :updated_at ], 
         :include => {:questions => {:except => [:created_at, :updated_at ],
@@ -76,10 +73,6 @@ module Assessable
       assessment = self.find(assessment_id)
       return assessment.publish
     end  
-    
-    def self.shit()
-      "crap"
-    end
     
     def clone
       cloned_assessment = self.dup

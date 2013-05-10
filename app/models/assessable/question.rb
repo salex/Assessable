@@ -1,10 +1,8 @@
 module Assessable
   class Question < ActiveRecord::Base
-    belongs_to :assessment
+    belongs_to :assessment, :touch => true
     has_many :answers, :order => "sequence", :dependent => :destroy
     before_save :valid_score_method
-    after_save :updateMax
-    after_destroy :updateMax
     validates_numericality_of :min_critical, :if => :critical, :message => "must be a number if critical checkbox checked"
     validates_numericality_of :weight, :greater_than_or_equal_to => 0
     accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:answer_text].blank? }, :allow_destroy => true
@@ -30,23 +28,18 @@ module Assessable
       end
       return new_ques
     end
-
+    
 
     private
 
-    def set_defaults
-      if ((self.score_method.downcase == "sum") || (self.score_method.downcase == "max")) && ((self.answer_tag.downcase == "checkbox") || (self.answer_tag.downcase == "select-multiple") )
-        self.score_method = self.score_method.capitalize
-      else
-        self.score_method = "Value" unless self.score_method.downcase == "none"
-      end
-    end
+    # def set_defaults
+    #   if ((self.score_method.downcase == "sum") || (self.score_method.downcase == "max")) && ((self.answer_tag.downcase == "checkbox") || (self.answer_tag.downcase == "select-multiple") )
+    #     self.score_method = self.score_method.capitalize
+    #   else
+    #     self.score_method = "Value" unless self.score_method.downcase == "none"
+    #   end
+    # end
 
-    def updateMax
-      if self.assessment
-        Assessment.computeMax(self.assessment.id) if is_dirty?
-      end
-    end
     
     def valid_score_method
       if ((self.answer_tag.downcase == "checkbox") || (self.answer_tag.downcase == "select-multiple") )
@@ -67,15 +60,6 @@ module Assessable
       end
     end
 
-    def is_dirty?
-       dirty = false
-       self.changed.each{|attrib|
-         dirty =  (dirty || !( /score_method|weight|critical|minimum_value/i =~ attrib ).nil?)
-       }
-      return dirty
-    end
-    
-    
 
   end
 end
