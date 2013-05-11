@@ -1,0 +1,4 @@
+Description:
+  The assessable:install generator creates an stuff in assets models and helper
+  directory. You can move this file anywhere you want as long as it
+  is in the load path.

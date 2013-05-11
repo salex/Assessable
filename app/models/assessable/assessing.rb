@@ -10,7 +10,7 @@ module Assessable
     class Display
       include ActionView::Helpers::TagHelper
       include ActionView::Helpers::FormTagHelper
-      include Assessable::AssessmentsHelper
+      include Assessable::TakingHelper
       
       def assessment(published_assessment,post=nil)
         render_assessment(published_assessment,post)

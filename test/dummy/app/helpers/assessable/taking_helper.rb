@@ -1,5 +1,5 @@
 module Assessable
-  module AssessmentsHelper
+  module TakingHelper
     
     def table_list(c1,c2)
       "<table><tr><td>#{c1}</td><td>#{c2}</td></tr></table>".html_safe

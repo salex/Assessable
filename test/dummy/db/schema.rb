@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426092645) do
+ActiveRecord::Schema.define(:version => 20130511105529) do
 
   create_table "assessable_answers", :force => true do |t|
     t.integer  "question_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20130426092645) do
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
   end
+
+  add_index "assessable_answers", ["question_id"], :name => "index_assessable_answers_on_question_id"
 
   create_table "assessable_assessments", :force => true do |t|
     t.string   "name"
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20130426092645) do
     t.datetime "updated_at",     :null => false
     t.string   "assessing_key"
   end
+
+  add_index "assessable_assessments", ["assessing_key"], :name => "index_assessable_assessments_on_assessing_key"
 
   create_table "assessable_questions", :force => true do |t|
     t.integer  "assessment_id"
@@ -61,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20130426092645) do
     t.datetime "updated_at",                     :null => false
   end
 
+  add_index "assessable_questions", ["assessment_id"], :name => "index_assessable_questions_on_assessment_id"
+
   create_table "assessable_stashes", :force => true do |t|
     t.string   "session_id"
     t.text     "session"
@@ -68,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20130426092645) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "assessable_stashes", ["session_id"], :name => "index_assessable_stashes_on_session_id"
 
   create_table "assessor_sections", :force => true do |t|
     t.integer  "assessor_id"

@@ -65,7 +65,6 @@ class TakeController < ApplicationController
   def complete
     taking =  Take.new(session)
     @info = taking.stash.session["taking"]
-    # logger.debug "CALLin render complete #{@apply}"
     render :template => "take/complete"
     
   end
