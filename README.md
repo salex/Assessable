@@ -86,6 +86,15 @@ show view has a Display/Test link that renders a form with the questions and ans
 results of the scoring. This will allow you to evaluate if the Assessable approach fits your needs. If you need a more in-depth analysis, follow the suggestion and 
 look at the Dummy application.
 
+The `rails g assessable:install` command also created a file db/assessable/silly.yaml. The yaml file is an export of a test assessment that uses
+most of the features of Assessable. There is three lines of commented out ruby code that you can put in a seed, or just past them into a console session.
+The code will import that assessment
+
+    filepath = Rails.root.join("db/assessable","silly.yaml")
+    hash = YAML.load(File.read(filepath)
+    Assessable::Assessment.import_hash(hash)
+
+
 If your are creating Assessments that the answers are repetitive (rate on a 1 to 5 scale), Questions can be cloned, 
 requiring that you only have to provide the questions text.
 
