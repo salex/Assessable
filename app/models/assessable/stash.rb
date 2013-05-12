@@ -55,13 +55,10 @@ module Assessable
     # updates or creates post['id'] hash
     def set_post(id,post)
       hash = self.get_data
-      logger.debug "Hash before update #{hash.inspect}"
       hash = hash.nil? ? {} : hash
       hash["post"] = {} unless hash["post"]
       hash["post"][id.to_s] = post
-      self.data = hash
-      logger.debug "Hash after update #{hash.inspect}"
-      
+      self.data = hash      
       self.save
       return self
     end
