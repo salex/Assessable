@@ -82,7 +82,7 @@ Matches can also be negated using the NOT operator "!" (explanation point)
 The good teacher (probably conservative) would know that students are sometime smarter than you think.
 
 * What are the nouns in the sentence "See Jane and Spot run."?
-  * text_eval set to ("spot&jane)&!see&!and&!run" 
+  * text_eval set to ("spot&jane)&!(see!and!run)" 
   * Any input containing "see" OR "and" OR "", "run" would NOT evaluate to true.
   
 Like Numeric Evaluations, Contains Evaluation also provides a mechanism of giving partial credit. The :: eliminator  divide the formula into an Exact section and a Partial
@@ -97,7 +97,7 @@ Again the liberal teacher decided they were being too liberal and decided to giv
 Again being a little smarter than the students, you repeat the not conditions.
 
 * What are the nouns in the sentence "See Jane and Spot run."?
-  * text_eval set to ("spot&jane)&!see&!and&!run::(spot|jane)&!see&!and&!run%%50" 
+  * text_eval set to ("spot&jane)&!(see!and!run)::(spot|jane)&!(see!and!run)%%50" 
   * Any input containing "see" OR "and" OR "", "run" would NOT evaluate to true.
 
 The is also a Text Eval helper that will help build the Contains formula. The form helper (or typing) will also allow an optional || (double OR operator) that allows

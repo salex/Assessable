@@ -58,6 +58,18 @@ module Assessable
       return tojson ? json : hash
     end
     
+    def export
+      compute_max
+      #double parse to get ride of dates from hash
+      hash = self.as_json(:except => [:created_at, :updated_at, :id ], 
+        :include => {:questions => {:except => [:created_at, :updated_at,:id, :assessment_id ],
+        :include => {:answers => {:except => [:created_at, :updated_at, :id, :question_id ]}}}})
+      json = hash.to_json
+      hash = Assessable.safe_json_decode(json)
+      return  hash
+    end
+    
+    
     def score_hash(tojson = false)
       #double parse to get ride of dates from hash
       hash = self.as_json(:only => [:id, :max_raw, :max_weighted ], 

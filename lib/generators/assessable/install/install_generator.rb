@@ -25,6 +25,11 @@ module Assessable
         copy_file "take.css.scss", "app/assets/stylesheets/assessable/take.css.scss"
       end
       
+      def create_silly_file
+        #create_file "config/initializers/assessable.rb", "# Add initialization content here"
+        copy_file "silly.yaml", "db/assessable/silly.yaml"
+      end
+      
     end
   end
 end
