@@ -91,7 +91,7 @@ most of the features of Assessable. There is three lines of commented out ruby c
 The code will import that assessment
 
     filepath = Rails.root.join("db/assessable","silly.yaml")
-    hash = YAML.load(File.read(filepath)
+    hash = YAML.load(File.read(filepath))
     Assessable::Assessment.import_hash(hash)
 
 

@@ -1,5 +1,5 @@
 # filepath = Rails.root.join("db/assessable","silly.yaml")
-# hash = YAML.load(File.read(filepath)
+# hash = YAML.load(File.read(filepath))
 # Assessable::Assessment.import_hash(hash)
 ---
 assessing_key: ''
