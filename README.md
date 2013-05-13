@@ -53,6 +53,8 @@ The dummy applications has examples on the **usage** of the engines functions to
 
 The examples will be documented on the WIKIE
 
+A small development.sqlite3 database is zipped in the dummy/db directory. Just unzip it.
+
 ## Installation
 
 Add Assessable to your Gemfile:
