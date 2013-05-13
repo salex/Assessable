@@ -49,6 +49,7 @@ module Dummy
 
     config.generators do |g|
       g.template_engine :haml
+      g.test_framework :mini_test, :spec => true, :fixture => true
     end
 
     # Enforce whitelist mode for mass assignment.
