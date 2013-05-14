@@ -28,7 +28,7 @@
             %ul
               %li= link_to 'Survey(All)', survey_take_path(assessor)
               - if assessor.method =~ /section/i
-                - assessor.assessor_sections.each do |s|
+                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active.%").each do |s|
                   %li= link_to s.name, survey_take_path(assessor, section: s.id)
                   
             
@@ -38,7 +38,7 @@
             %ul
               %li= link_to 'Score(All)', score_take_path(assessor,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
               - if assessor.method =~ /section/i
-                - assessor.assessor_sections.each do |s|
+                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active.%").each do |s|
                   %li= link_to s.name, score_take_path(assessor, section: s.id,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
           
             

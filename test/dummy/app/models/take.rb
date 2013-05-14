@@ -2,6 +2,7 @@ class Take
   attr_accessor  :stash, :session, :assessed, :assessor, :section, :post
   
   def initialize(session,clear=false)
+    ## Get or create a Stash instance by session_id
     self.stash = Assessing.get_stash(session)
     if clear
       @stash.data = nil
@@ -10,6 +11,7 @@ class Take
   end
   
   def common_setup(assessor,assessed,options)
+    ## Setup and session with control information
     opt = options.stringify_keys
     @assessed = assessed
     @assessor = assessor
@@ -33,10 +35,12 @@ class Take
     @session = {"controller" => "apply"}
     opt = common_setup(assessor,assessed,options)
     @session["models"] = @assessor.assessor_sections.where(:status => "active.model").pluck(:id)
+    ## setup after hooks
     @stash.session["taking"] = @session
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if  opt["method"]
+      ## call before hook
       @session["can_do"] = @assessed.send( opt["method"],@assessor)
     end
     return self
@@ -50,6 +54,7 @@ class Take
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if opt["method"]
+      ## call before hook
       @session["can_do"] = @assessed.send(method,@assessor)
     end
     return self
@@ -63,6 +68,7 @@ class Take
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if opt["method"]
+      ## call before hook
       @session["can_do"] = @assessed.send(method,@assessor)
     end
     return self
@@ -116,7 +122,7 @@ class Take
     assessed = assessed_model.find(assessed_id)
   end
   
-  def self.rescore_assessor(assessor)
+  def self.rescore_assessor(assessor) # assessor instance
     sections = assessor.assessor_sections.where("status LIKE ? ", "active.input")
     sections.each do |section|
       scores = section.scores
@@ -128,7 +134,7 @@ class Take
     end
   end
   
-  def self.rescore_section(section)
+  def self.rescore_section(section) # session instance
     scores = section.scores
     scores.each do |score|
       post = Assessing.score_assessment(section.published, score.scoring)
