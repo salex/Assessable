@@ -1,6 +1,6 @@
-The roots of Assessable were developed at an agency where an on-line job application process was needed. This process was provided as a service of the agency
+The roots of Assessable were developed at an agency where an on-line job application process was needed. This process was provided as a service of the agency customers
 and not for jobs with the agency.  The purpose was to screen potential applicants by
-asking a series of question/answers. The questions were designed to evaluate areas such as work history, work skills, attitude, background, etc. These areas were
+asking a series of question. The questions were designed to evaluate areas such as work history, work skills, attitude, background, etc. These areas were
 scored both separately and as an aggregate score.
 Applicants scores and text areas of the applications were evaluated and the top applicants were then progressed to the next stage in the selection process (e.g., interview, a battery of tests/evaluations).
 
@@ -26,23 +26,23 @@ For a simple host application, it just needs a link to an assessment to administ
 
 The Dummy Application inside the engine demonstrate usage of the engine in a simulated environment. The basic model is
 
-* Assessing model(s) (simulated in the Stage model)
+* Assessing model(s) (different model behaviors simulated in the Stage model)
 * Assessors - belongs to Assessing (polymorphic), has many AssessorSections, has many Scores through AssessorSections
 * AssessorSection - belongs to Assessor, has many Scores - links to AssessableAssessment
-* Assessed - has many scores (simulated in the User model)
+* Assessed - has many scores (different user roles simulated in the User model)
 * Scores - belongs to Assessed (polymorphic), belongs to AssessorSection.
 
 The polymorphic approach is not needed, but allows Scores and Assessors be on one place, but separated by the polymorphic type. If you only have
 one assessed model and one assessing model, you just replace the polymorphic relations.
 
-The AssessorSection model stores the entire published AssessableAssessment object. This so the creation of the object in not created each time someone is assessed.
+The AssessorSection model stores the entire published AssessableAssessment object. This so the creation of the object in not needed each time someone is assessed.
 This also allows versioning of the assessment to take care problems
 described above where changes are needed. If changes are made to the assessment, you can either:
 
 * replace the published version with the new version, and re-score all the scores if necessary
 * archive the section and clone the new version to a new section and manage the difference through evaluation.
 
-The Dummy Application has links on the home page that demonstrates using Assessable to administer:
+The Dummy Application has links on the home page and in the Users list that demonstrates using Assessable to administer:
 
 * An on-line type application process
 * An anonymous type survey
