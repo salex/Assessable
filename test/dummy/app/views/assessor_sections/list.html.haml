@@ -2,7 +2,7 @@
   %legend Assessment Search
   = form_tag(  search_assessor_section_path(@assessor)) do
     %strong Status:
-    = select_tag :status, options_for_select(%W( #{""} New Active Locked Master),params[:status])
+    = select_tag :status, options_for_select([""] + Assessable.config[:assessment_status_options],params[:status])
     %strong Key:
     = search_field_tag :key, params[:key]
     = select_tag :where, options_for_select(['Start with','Contains',"Ends with"],params[:where]),  :prompt => '--Select Condition--'
@@ -16,9 +16,10 @@
   %table
     %tr.list-header
       %td Name
+      %td Status
+      %td Assessing Key
       %td Key
       %td Category
-      %td Status
       %td version
       %td Actions
     - altswitch = false
@@ -27,9 +28,10 @@
       - altclass = altswitch ? "" : "class=\"alt\""
       <tr #{raw altclass} >
       %td= assessment.name
-      %td= assessment.assessing_key
-      %td= assessment.category
       %td= assessment.status
+      %td= assessment.assessing_key
+      %td= assessment.key
+      %td= assessment.category
       %td= assessment.updated_at
       %td
         = link_to "New Section",new_assessor_assessor_section_path(@assessor.id,:assessment_id => assessment.id)

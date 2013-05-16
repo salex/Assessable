@@ -4,6 +4,28 @@ module Assessable
     
     attr_accessible :category, :default_layout, :default_tag, :description, :instructions, :key, :max_raw, :max_weighted, :name, :status, :assessing_key
   
+    def self.search(params)
+      assessments = Assessable::Assessment.scoped
+
+      params[:where] = "Contains" unless params[:where]
+      params[:key] = "" unless params[:key]
+      params[:status] = "" unless params[:status]
+      case params[:where]
+      when 'Start with'
+       key =  params[:key] + "%"
+      when 'Contains'
+       key = "%" + params[:key] + "%"
+      when "Ends with"
+       key = "%" + params[:key]
+      else
+       key = params[:key]
+      end
+      # For psql, change LIKE to ILIKE or downcase everything
+      ilike =  "category LIKE '#{key}' OR assessing_key LIKE '#{key}' OR name LIKE '#{key}' OR description LIKE '#{key}'"
+      assessments = assessments.where(ilike)
+      return assessments
+    end
+  
   
     def compute_max
       assessment = self

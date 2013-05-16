@@ -5,7 +5,7 @@ module Assessable
     # GET /assessments
     # GET /assessments.json
     def index
-      @assessments = Assessment.all
+      @assessments = Assessment.search(params).page(params[:page]).per(20)
   
       respond_to do |format|
         format.html # index.html.erb

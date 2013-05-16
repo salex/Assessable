@@ -82,7 +82,7 @@ class AssessorSectionsController < ApplicationController
   end
   
   def list
-    @assessor = Assessor.find(params[:assessor_id])
+    @assessor = Assessor.find(params[:assessor_id] ||= params[:id])
     @assessments = @assessor.assessment_search(params)
     render :template => "assessor_sections/list"
   end

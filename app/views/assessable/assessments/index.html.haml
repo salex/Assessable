@@ -1,28 +1,38 @@
 %fieldset.index-list
   %legend Listing assessments
+  .box
+    = form_tag(  assessments_path, :method => :get) do
+      %strong Status:
+      = select_tag :status, options_for_select(%W( #{""} New Active Locked Master),params[:status])
+      %strong Key Fields:
+      = search_field_tag :key, params[:key]
+      = select_tag :where, options_for_select(['Start with','Contains',"Ends with"],params[:where]),  :prompt => '--Select Condition--'
+      = submit_tag "Search"
+      = link_to "Clear Search", assessments_path
+  
+  %span.f-left= paginate @assessments
+  %span.f-right= page_entries_info @assessments
 
   %table
     %tr.list-header
       %th Name
-      %th Category
-      %th Keys
-      %th Tag
-      %th Layout
+      %th Status
+      %th Category Key
+      %th Assessing Key
+      %th Key
       %th Raw
       %th Weighted
-      %th Status
       %th Actions
 
     - @assessments.each do |assessment|
       %tr
         %td= assessment.name
+        %td= assessment.status
         %td= assessment.category
         %td= assessment.assessing_key
-        %td= assessment.default_tag
-        %td= assessment.default_layout
+        %td= assessment.key
         %td= assessment.max_raw
         %td= assessment.max_weighted
-        %td= assessment.status
         %td
           = link_to 'Show', assessment
           = link_to 'Edit', edit_assessment_path(assessment)

@@ -9,15 +9,15 @@ survey/questions/answers model out there (screencasts, gems).
 
 The on-line application presented several problems.
 
-* The assessments were tailored for a specific job, but there were some of questions (general) that were asked for each job.
+* The assessments were tailored for a specific job, but there were some questions (general) that were asked for each job.
 * The assessments were often developed at the last minute and often contained errors that were not discovered immediately.
   * For example, misspelling, question not clear, answer value/weight not getting intended results.
 * Scoring general questions may be different for each job.
-* Some answers required asking another question (Are you a US Citizen? - no response request work permit number)
+* Some answers required asking another question (Are you a US Citizen? - no response requests work permit number)
 
-There were often hundred, if not thousands o applications for jobs. An error or an omission required management decisions and what changes were needed and what the effects would be of those already scored. 
+There were often hundreds, if not thousands o applications for jobs. An error or an omission required management decisions and what changes were needed and what the effects would be of those already scored. 
 
-It was also discovered that there were other processes at the agency were a {evaluation/survey/quiz}/questions/answers model was useful. Code was duplicated and of course maintainability became a problem. Assessable was developed to take at least some of functions of this process and put them in one place. That solves some
+It was also discovered that there were other processes at the agency that a {evaluation/survey/quiz}/questions/answers model was useful. Code was duplicated and of course maintainability became a problem. Assessable was developed to take at least some of functions of this process and put them in one place. That solves some
 problems, but the different behaviors must be implemented in the host application.
 
 Realistically, Assessable is pretty simplistic - it just manages CRUD models, generates and displays assessments and scores the answers.
@@ -32,7 +32,7 @@ The Dummy Application inside the engine demonstrate usage of the engine in a sim
 * Assessed - has many scores (simulated in the User model)
 * Scores - belongs to Assessed (polymorphic), belongs to AssessorSection.
 
-The polymorphic approach is not needed, but allows Scores and Assessors be on one place, but separated by the polymorphic type. If your only 
+The polymorphic approach is not needed, but allows Scores and Assessors be on one place, but separated by the polymorphic type. If you only have
 one assessed model and one assessing model, you just replace the polymorphic relations.
 
 The AssessorSection model stores the entire published AssessableAssessment object. This so the creation of the object in not created each time someone is assessed.
