@@ -104,7 +104,7 @@ class Take
   def set_post(post)
     taking = @stash.session["taking"]
     @section = AssessorSection.find(taking["sections"][taking["idx"]])
-    post = Assessing.score_assessment(@section.published,post)
+    post = Assessing.score_assessment(@section.published,post).scored_post
     post_idx = taking["idx"]
     taking["status"][taking["idx"]] = true
     new_idx = taking["status"].index(nil)
@@ -127,7 +127,7 @@ class Take
     sections.each do |section|
       scores = section.scores
       scores.each do |score|
-        post = Assessing.score_assessment(section.published, score.scoring)
+        post = Assessing.score_assessment(section.published, score.scoring).scored_post
         score.scoring = post
         score.save
       end
@@ -137,7 +137,7 @@ class Take
   def self.rescore_section(section) # session instance
     scores = section.scores
     scores.each do |score|
-      post = Assessing.score_assessment(section.published, score.scoring)
+      post = Assessing.score_assessment(section.published, score.scoring).scored_post
       score.scoring = post
       score.save
     end

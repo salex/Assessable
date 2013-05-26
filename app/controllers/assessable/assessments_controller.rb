@@ -95,8 +95,10 @@ module Assessable
     
     def post
       @assessment_hash = Assessment.publish(params[:id])
-      @post = Assessing.score_assessment(@assessment_hash,params[:post])
-      Stash.set_post(params[:id],params[:post],session)
+      scoring = Scoring::Score.new(@assessment_hash,params[:post])
+      @post = scoring.scored_post
+      
+      Stash.set_post(params[:id],@post,session)
       #render :text => "Testing: post_obj =>  #{results.inspect} \n The original post #{@in.inspect}", :layout => true
     end
     

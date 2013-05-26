@@ -1,11 +1,5 @@
 module Assessable
-  # if you chose to install the helper, this helper copies the Assessable::Displaying:Display class
-  # and provides a helper to call the local copy of display.
-  module TakingHelper
-    
-    def display_assessment(published,post=nil)
-      Display.assessment(published,post)
-    end
+  module Displaying
     
     class Display
       include ActionView::Helpers::TagHelper
@@ -199,8 +193,5 @@ module Assessable
       end
       
     end
-
-    
-    
   end
 end

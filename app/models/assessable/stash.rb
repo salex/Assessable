@@ -1,7 +1,7 @@
 module Assessable
   ## Stash is a version of Session Store .
   # Two columns, :session and :data allow storage of data using JSON serialization
-  # :session can bu used as required, in this case, limited information on the assessment(s)
+  # :session can be used as required, in this case, limited information on the assessment(s)
   # being entered are stored.
   # :data is another gentic data store, in this case, post data from single or multiple forms/assessments are stored
   
@@ -50,8 +50,8 @@ module Assessable
       stash.set_post(id,post)
     end
     
-    ## sets a post by a user defined id inside the data serailsized has
-    # if post hash is not find, it creates it
+    ## sets a post by a user defined id inside the data serailsized hash
+    # if post hash is not found, it creates it
     # updates or creates post['id'] hash
     def set_post(id,post)
       hash = self.get_data

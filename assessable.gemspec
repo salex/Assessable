@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency "haml-rails"
   s.add_dependency "haml"
   s.add_dependency 'kaminari'
+  
   s.add_development_dependency "sqlite3"
 end

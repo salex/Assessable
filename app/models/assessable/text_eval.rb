@@ -1,5 +1,6 @@
 module Assessable  
   module TextEval
+    
     class Numeric
       attr_reader :sections, :match, :deltas
       
@@ -135,7 +136,7 @@ module Assessable
         result = 0.0
         return result if @partials.nil?
         @partials.each do |partial|
-          if exact_score(partial[0],answer)
+          if match_exact(partial[0],answer)
             result += value * (partial[1]/100.0)
           end
         end

@@ -22,7 +22,8 @@ class Score < ActiveRecord::Base
       score.raw = score.scoring["scores"]["percent"]["raw"]
       score.weighted = score.scoring["scores"]["percent"]["weighted"]
       score.answers = "|"
-      score.scoring["all"].each do |v|
+      all_answers = score.scoring["answer"].values.flatten 
+      all_answers.each do |v|
         score.answers += (v.to_i).to_s + "|"
       end
       if score.scoring["critical"].nil?

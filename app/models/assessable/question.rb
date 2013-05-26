@@ -5,6 +5,7 @@ module Assessable
     before_save :valid_score_method
     validates_numericality_of :min_critical, :if => :critical, :message => "must be a number if critical checkbox checked"
     validates_numericality_of :weight, :greater_than_or_equal_to => 0
+    validates_presence_of :assessment_id
     accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:answer_text].blank? }, :allow_destroy => true
     
     attr_accessible :answer_layout, :answer_tag, :critical, :group_header, :instructions, :key, :min_critical, :question_text, :score_method, :sequence, :short_name, :assessment_id, :weight, :answers_attributes

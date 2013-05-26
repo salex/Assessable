@@ -1,5 +1,4 @@
 require "assessable/engine"
-require "assessable/text_eval"
 
 module Assessable
   
