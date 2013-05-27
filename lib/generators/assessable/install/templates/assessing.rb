@@ -45,6 +45,7 @@ class Assessing < Assessable::Assessing
   #     #   scoring.scored_post, appends the scores hash to the original post
   #   end
   #   
+  #   ## Displaying Moudule
   #   def self.display_assessment(published_assessment,post=nil)
   #     # renders html for the published_assessment object
   #     # the post argument is optional and ignores the scores object if includes.
@@ -53,5 +54,10 @@ class Assessing < Assessable::Assessing
   #     Assessable::Displaying::Display.assessment(published_assessment,post)
   #   end
   #   
+      # def self.display_summary(published_assessment,post)
+      #   #renders html displaying a score summary that may be useful
+      #   Assessable::Displaying.display_summary(published_assessment,post)
+      # end
+  
   
 end

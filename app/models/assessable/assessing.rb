@@ -53,6 +53,10 @@ module Assessable
       Assessable::Displaying::Display.assessment(published_assessment,post)
     end
     
+    def self.display_summary(published_assessment,post)
+      #renders html displaying a score summary that may be useful
+      Assessable::Displaying.display_summary(published_assessment,post)
+    end
   end
   
 end

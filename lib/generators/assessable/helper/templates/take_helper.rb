@@ -200,6 +200,51 @@ module Assessable
       
     end
 
+    def display_summary(assmt,post)
+
+      html = ""
+      alt = true 
+      ans_count = post['answer'].count
+      assmt['questions'].each do |question|
+        alt = !alt
+        rclass = alt ? 'alt' : ''
+        qkey = question['id'].to_s
+        ans_array = question['answers'].map{|i| i['id']}
+        ans = post['answer'][qkey]
+        next if ans.nil?
+        all = "["
+        isText =  !(question['answer_tag'] =~ /text/i).nil?
+        question_text = question['short_name'].blank? ? question['question_text'].slice(0,40) : question['short_name']
+        question_text = "{#{question["id"]}} #{question_text}"
+        answer_text = ""
+        ans.each do |akey|
+          akeyi = akey.to_i
+          aidx = ans_array.index(akeyi)
+          answ = question['answers'][aidx]
+          answer_text = answ['short_name'].blank? ? answ['answer_text'].slice(0,20) : answ['short_name']
+          if isText
+            all << post['text'][akey] + ", " unless post['text'][akey].nil?
+          else
+            if answ['requires_other'] && post['other']
+              all << answer_text + '{' + post['other'][akey] + '}, '
+            else
+              all << answer_text + ", "
+            end
+          end
+        end
+        all = all[0..-3] + "]"
+        if post['scores']['critical']
+          rclass = post['scores']['critical'].index(qkey).nil? ? rclass : (rclass += " failed"  )
+        end
+        rclass = "class=\"#{rclass}\"" unless rclass.blank?
+
+        html << "<tr #{rclass}><td>#{question_text}</td><td>#{all}</td><td>#{post['scores'][qkey]['raw']}</td><td>#{post['scores'][qkey]['weighted']}</td></tr>"
+      end
+      html << "<tr class=\"list-header\"><td></td><td>Total</td><td>#{post['scores']["total"]['raw']}</td><td>#{post['scores']["total"]['weighted']}</td></tr>"
+      
+      return html.html_safe
+    end  
+
     
     
   end

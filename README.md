@@ -28,12 +28,13 @@ Assessable takes a different approach in that the engine only provides limited *
 
 * CRUD management of the Assessments<-Questions<-Answers nested structure.
   * This is not much more than a slightly styled and altered scaffold structure of nested models.
-* A helper that formats the Assessments<-Questions<-Answers into form inputs that you wrap into a form in your application.
+* Displaying: A helper class that formats the Assessments<-Questions<-Answers into form inputs that you wrap into a form in your application.
   * An Assessment model instance method *publish* generates a hash that represents the nested structure. That hash is used
   in the helper and in the next function, scoring.
   * Form elements include, Radio Buttons, Check Boxes, Text Fields, Textareas, Select tags, Multiple-Select Tags
-* A method to score the results given the published hash, and the post results (params[:post]) from the form.
-  * The method returns a score object that adds scores and other information to the form post params.
+  * You can optionally install the class as a helper if you want to modify to format.
+* Scoring: A class to score the results given the published hash, and the post results (params[:post]) from the form.
+  * The class returns a score object that adds scores and other information to the form post params.
   * Scoring is computed from the value of each answer. The sum of all the answer values is compared to the **maximum** score possible.
   * Scoring is optional, you can just gather the answers and do your own evaluation/mining/scoring.
   
@@ -169,15 +170,15 @@ in a serialized column and provides a form of versioning.
       
 The Parmam[:post] contains an answers array for each questions, and optional text and other_text if required.
 
-  {"answer"=>{"9"=>["43"], "10"=>["50"], "11"=>["57"], "12"=>["64"]}}
+  {"answer"=>{"9"=>["43"], "10"=>["50"], "11"=>["57"], "12"=>["64","67"]}, "text" => { "50" => "Text input"}}
   
-That hash is then scored and scoring information added. The dummy app allows sections and the post would contain scores for each section.
+That hash is then scored and scoring information optionally added to the post. The dummy app allows sections and the post would contain scores for each section.
 
-    {"post"=>{"4"=>{"answer"=>{"9"=>["43"], "10"=>["50"], "11"=>["57"], "12"=>["64"]}, 
+    {"post"=>{"4"=>{"answer"=>{"9"=>["43"], "10"=>["50"], "11"=>["57"], "12"=>["64"], "text" => { "50" => "Text input"}}, 
     "scores"=>{"max"=>{"raw"=>20.0, "weighted"=>20.0}, "9"=>{"raw"=>2.0, "weighted"=>2.0}, 
     "10"=>{"raw"=>3.0, "weighted"=>3.0}, "11"=>{"raw"=>4.0, "weighted"=>4.0}, 
     "12"=>{"raw"=>5.0, "weighted"=>5.0}, "total"=>{"raw"=>14.0, "weighted"=>14.0}, 
-    "percent"=>{"raw"=>0.7, "weighted"=>0.7}}, "all"=>["43", "50", "57", "64"]}}}
+    "percent"=>{"raw"=>0.7, "weighted"=>0.7}}, "all_answers"=>["43", "50", "57", "64"]}}}
     
 You take out of the score object what you need and store it. In the Dummy apps case, it again uses a serialized JSON column.
 
