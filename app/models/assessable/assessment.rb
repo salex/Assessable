@@ -25,81 +25,52 @@ module Assessable
       assessments = assessments.where(ilike)
       return assessments
     end
-  
-  
-    def compute_max
-      assessment = self
-      maxRaw = 0
-      maxWeighted = 0
-      for question in assessment.questions
-        maxQues = -1
-        sumQues = 0
-        weight = question.weight.nil? ? 0 : question.weight.to_f
-        ansType = question.answer_tag.blank? ? "" : question.answer_tag.downcase
-        scoreMethod = question.score_method.blank? ? "value" : question.score_method.downcase
-        isScored = ((scoreMethod.downcase != "none") ) # and (weight > 0)
-        isText =  !(ansType =~ /text/i).nil?
-        for answer in question.answers
-          isTextScored =  !answer.text_eval.blank? 
-          value = answer.value.to_f
-          if isScored
-            if ((isText  and isTextScored) or (!isText ))
-              if (value > maxQues)
-                maxQues = value
-              end if
-              sumQues += value        
-            end
+    
+    def compute_max_scores(published)
+      max_raw = max_weighted = 0
+      published['questions'].each do |question|
+        answer_values = question['answers'].map{|i| i['value']}
+        score_method = question['score_method'].downcase
+        unless score_method == 'none'
+          if score_method == 'sum' || score_method.include?('text')
+            value = answer_values.sum
+          else
+            value = answer_values.max
           end
         end
-        if ((scoreMethod == "sum")  and ((ansType == "checkbox") || (ansType == "select-multiple")))
-          maxRaw += sumQues
-          maxWeighted += (sumQues * weight)
-        elsif ((scoreMethod == "textcontains") || (scoreMethod == "textnumeric"))
-          maxRaw += sumQues
-          maxWeighted += (sumQues * weight)
-        else
-          maxRaw += maxQues
-          maxWeighted += (maxQues * weight)
-        end
+        max_raw += value
+        max_weighted += (value * question['weight'])
       end
-      assessment.max_raw = maxRaw
-      assessment.max_weighted = maxWeighted
-      assessment.updated_at = Time.now  # force commit
-      assessment.save
-      return true
+      if published["max_raw"] != max_raw || published["max_weighted"] != max_weighted
+        published["max_raw"] = max_raw
+        published["max_weighted"] = max_weighted
+        self.updated_at = Time.now  # force commit
+        self.save
+      end
+      return nil
     end
   
+  
     def publish(tojson = false)
-      compute_max
-      #double parse to get ride of dates from hash
+      #double parse to get rid of symbols from as_json hash
       hash = self.as_json(:except => [:created_at, :updated_at ], 
         :include => {:questions => {:except => [:created_at, :updated_at ],
         :include => {:answers => {:except => [:created_at, :updated_at ]}}}})
       json = hash.to_json
       hash = Assessable.safe_json_decode(json)
+      self.compute_max_scores(hash) # saves assessment if max scores changed
       return tojson ? json : hash
     end
     
     def export
-      compute_max
-      #double parse to get ride of dates from hash
+      #double parse to get rid of symbols from as_json hash
       hash = self.as_json(:except => [:created_at, :updated_at, :id ], 
         :include => {:questions => {:except => [:created_at, :updated_at,:id, :assessment_id ],
         :include => {:answers => {:except => [:created_at, :updated_at, :id, :question_id ]}}}})
       json = hash.to_json
       hash = Assessable.safe_json_decode(json)
+      self.compute_max_scores(hash) # saves assessment if max scores changed
       return  hash
-    end
-    
-    
-    def score_hash(tojson = false)
-      #double parse to get ride of dates from hash
-      hash = self.as_json(:only => [:id, :max_raw, :max_weighted ], 
-        :include => {:questions => {:only => [:id, :score_method, :weight, :critical, :min_critical ],
-        :include => {:answers => {:only => [:id, :value, :text_eval ]}}}})
-      json = hash.to_json
-      hash = Assessable.safe_json_decode(json)
-      return tojson ? json : hash
     end
     
 
@@ -146,6 +117,17 @@ module Assessable
         end
       end
     end
+  end
+  
+  ## method only for testing (small version of published with only attr for testing), does not call compute max
+  def score_hash(tojson = false)
+    #double parse to get rid of symbols from as_json hash
+    hash = self.as_json(:only => [:id, :max_raw, :max_weighted ], 
+      :include => {:questions => {:only => [:id, :score_method, :weight, :critical, :min_critical ],
+      :include => {:answers => {:only => [:id, :value, :text_eval ]}}}})
+    json = hash.to_json
+    hash = Assessable.safe_json_decode(json)
+    return tojson ? json : hash
   end
   
 end

@@ -3,9 +3,9 @@ module Assessable
     belongs_to :assessment, :touch => true
     has_many :answers, :order => "sequence", :dependent => :destroy
     before_save :valid_score_method
-    validates_numericality_of :min_critical, :if => :critical, :message => "must be a number if critical checkbox checked"
+    validates_numericality_of :min_critical,  :greater_than_or_equal_to => 0, :if => :critical, :message => "must be a number if critical checkbox checked"
     validates_numericality_of :weight, :greater_than_or_equal_to => 0
-    validates_presence_of :assessment_id
+    validates_presence_of :assessment_id, :answer_tag, :score_method
     accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:answer_text].blank? }, :allow_destroy => true
     
     attr_accessible :answer_layout, :answer_tag, :critical, :group_header, :instructions, :key, :min_critical, :question_text, :score_method, :sequence, :short_name, :assessment_id, :weight, :answers_attributes
@@ -31,36 +31,56 @@ module Assessable
     end
     
 
-    private
-
-    # def set_defaults
-    #   if ((self.score_method.downcase == "sum") || (self.score_method.downcase == "max")) && ((self.answer_tag.downcase == "checkbox") || (self.answer_tag.downcase == "select-multiple") )
-    #     self.score_method = self.score_method.capitalize
-    #   else
-    #     self.score_method = "Value" unless self.score_method.downcase == "none"
-    #   end
-    # end
-
-    
-    def valid_score_method
-      if ((self.answer_tag.downcase == "checkbox") || (self.answer_tag.downcase == "select-multiple") )
-        unless ((self.score_method.downcase == "sum") || (self.score_method.downcase == "max")  || (self.score_method.downcase == "none")) 
-          self.errors[:base] << "Score Method must be None, Sum or Max for Checkbox or Select-multiple tags"
+    def valid_score_method?
+      return false if self.score_method.nil? || self.answer_tag.nil?
+      if score_as_multi?
+        unless valid_scoring_for_multi?
+          self.errors.add :score_method, "Score Method must be None, Sum or Max for Checkbox or Select-multiple tags"
           return false
         end
-      elsif ((self.answer_tag.downcase == "text") || (self.answer_tag.downcase == "textarea") )
-        unless ((self.score_method.downcase == "textcontains") || (self.score_method.downcase == "textnumeric")  || (self.score_method.downcase == "none")) 
-          self.errors[:base] << "Score Method must be None, TextCompletion or TextNumeric for Text or Textarea tags"
+      elsif score_as_text?
+        unless valid_scoring_for_text?
+          self.errors.add :score_method, "Score Method must be None, TextCompletion or TextNumeric for Text or Textarea tags"
           return false
         end
       else
-        unless ((self.score_method.downcase == "value") || (self.score_method.downcase == "none")) 
-          self.errors[:base] << "Score Method #{self.score_method} invalid for tag #{self.answer_tag}"
+        unless valid_scoring_for_generic?
+          self.errors.add :score_method, "Score Method #{score_method} invalid for tag #{answer_tag}"
           return false
         end
       end
+      true
     end
 
+    private
+
+    def score_as_multi?
+      answer_type_in?(['checkbox', 'select-multiple'])
+    end
+
+    def score_as_text?
+      answer_type_in?(['text', 'textarea'])
+    end
+
+    def answer_type_in?(valid_types)
+      valid_types.include?(self.answer_tag.downcase)
+    end
+
+    def valid_scoring_for_multi?
+      score_method_in?(['sum', 'max', 'none'])
+    end
+
+    def valid_scoring_for_text?
+      score_method_in?(['textcontains', 'textnumeric', 'none'])
+    end
+
+    def valid_scoring_for_generic?
+      score_method_in?(['value', 'none'])
+    end
+
+    def score_method_in?(valid_score_methods)
+      valid_score_methods.include?(self.score_method.downcase)
+    end
 
   end
 end
