@@ -15,6 +15,8 @@ class UsersController < ApplicationController
       redirect_to survey_stages_path(:assessed => "user", :assessed_id => @user.id)
     end
     @scores = @user.scores
+    @users = User.all
+    
   end
   
   private

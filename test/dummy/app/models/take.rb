@@ -64,6 +64,7 @@ class Take
     @taking = {"controller" => "evaluate"}
     opt = common_setup(assessor,assessed,options)
     @stash.session["taking"] = @taking
+    @stash.save
     return self
   end
   

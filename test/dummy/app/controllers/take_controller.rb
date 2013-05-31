@@ -25,7 +25,7 @@ class TakeController < ApplicationController
     @assessor = Assessor.find(params[:id])
     assess = params[:assessed].capitalize.constantize
     @assessed = assess.find(params[:assessed_id])
-    @taking = taking.evaluate_setup(@assessor,@assessed,method: :can_eval, section: params[:section], :repeating => true)
+    @taking = taking.evaluate_setup(@assessor,@assessed)    
     section
   end
   
@@ -45,7 +45,6 @@ class TakeController < ApplicationController
       init.stash.session["taking"]["idx"] = params[:id].to_i
       init.stash.save
     end
-    
     @taking = init.get_section
     @post = @taking.post
     @info = @taking.stash.session["taking"]

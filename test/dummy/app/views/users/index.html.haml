@@ -6,15 +6,19 @@
         %span{style: "display:inline-block;width:120px"}= link_to "#{user.username}/#{user.role}", user_path(user)
 
         = link_to "Login as", user_path(user,:login => "as")
-        \|
-        = link_to "Take Survey", user_path(user,:survey => "me")
-       
-        - if current_user && current_user.id != user.id
+        - if current_user.role == 'Employee' && user.role == "Instructor"
           \|
-          = link_to "Evaluate", user_path(user,:evaluate => "me")
-          - if user.role == 'Citizen'
-            \|
-            = link_to "Score", user_path(user,:score => "me")
-       
+          = link_to "Evaluate", user_path(user,:evaluate => "me") 
+        - if user.role == 'Citizen' &&  (current_user.role == 'Employee' || current_user.role == 'Instructor')
+          \|
+          = link_to "Score", user_path(user,:score => "me") 
+        - if current_user.role == 'Citizen' && current_user.id == user.id
+          \|
+          = link_to "Apply", apply_stages_path
+        - if current_user.id == user.id
+          \|
+          = link_to "Take Survey", user_path(user,:survey => "me")
+          
+        
 
         

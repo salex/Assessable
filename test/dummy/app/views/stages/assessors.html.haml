@@ -10,7 +10,7 @@
       %th Assessed model
       %th Name
       %th Status
-      %th Instructions
+      %th Sectionable
       %th Before Method
       %th Actions
 
@@ -20,25 +20,27 @@
         %td= assessor.assessed_model
         %td= assessor.name
         %td= assessor.status
-        %td= assessor.instructions
+        %td= assessor.sectionable
         %td= assessor.before_method
         %td
           - case @status
           - when "active.survey"
             %ul
               %li= link_to 'Survey(All)', survey_take_path(assessor)
-              - if assessor.method =~ /section/i
-                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active.%").each do |s|
+              - if assessor.sectionable
+                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active%").each do |s|
                   %li= link_to s.name, survey_take_path(assessor, section: s.id)
                   
             
           - when "active.evaluate"
             = link_to 'Evaluate', evaluate_take_path(assessor,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
+            
           - when "active.score"
             %ul
               %li= link_to 'Score(All)', score_take_path(assessor,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
-              - if assessor.method =~ /section/i
-                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active.%").each do |s|
+              
+              - if assessor.sectionable
+                - assessor.assessor_sections.where("assessor_sections.status LIKE ?","active%").each do |s|
                   %li= link_to s.name, score_take_path(assessor, section: s.id,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
           
             
