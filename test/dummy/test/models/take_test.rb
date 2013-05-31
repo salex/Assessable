@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Take do
   before do
-    @assessor = Assessor.create(:assessoring_type => 'Stage', assessoring_id:1, assessed_model: 'User', status: 'active', method: 'Assessor.can_take')
+    @assessor = Assessor.create(:assessoring_type => 'Stage', assessoring_id:1, assessed_model: 'User', status: 'active', before_method: 'Assessor.can_take')
     section = @assessor.assessor_sections.build(:assessment_id => 1, status: 'active', sequence: 1, category: 'general')
     section.save
     section = @assessor.assessor_sections.build(:assessment_id => 2, status: 'active', sequence: 2, category: 'education.model')
