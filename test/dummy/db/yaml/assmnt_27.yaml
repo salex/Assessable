@@ -1,0 +1,1302 @@
+---
+category: interview.scores
+default_tag: Radio
+default_layout: Inline
+description: Basic Interview Scores, allow multiple interviewers. Used by Teleform::InterviewForm.
+  key attributes is index to Teleform form fields
+instructions: Just fill the stuff out
+key: Assessor.Stage.22.Interview
+max_raw: 74.0
+max_weighted: 74.0
+name: Interview Score Sheet
+status: new
+questions:
+- answer_tag: Text
+  critical: false
+  group_header: ''
+  instructions: Use last, first name format
+  key: Interviewer
+  min_critical: 
+  question_text: Interviewer name
+  score_method: TextContains
+  sequence: 1
+  short_name: Interviewer
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: Name
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: Name
+    text_eval: anything
+    value: 1.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Company
+  min_critical: 
+  question_text: ! "Is interviewer from AIDT or \r\nthe Company"
+  score_method: None
+  sequence: 2
+  short_name: Company
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: AIDT
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: AIDT
+    text_eval: 
+    value: 1.0
+  - answer_text: Company
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: Company
+    text_eval: 
+    value: 2.0
+- answer_tag: Checkbox
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: NoShow
+  min_critical: 
+  question_text: No Show
+  score_method: None
+  sequence: 3
+  short_name: NoShow
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: Checked
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: Checked
+    text_eval: 
+    value: 1.0
+- answer_tag: Checkbox
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Withdrew
+  min_critical: 
+  question_text: Interviewee Withdrew
+  score_method: None
+  sequence: 4
+  short_name: Withdrew
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: Checked
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: Checked
+    text_eval: 
+    value: 1.0
+- answer_tag: Checkbox
+  critical: false
+  group_header: ! 'Able to attend training:'
+  instructions: Days you can attend training
+  key: Availability
+  min_critical: 
+  question_text: Weekday Availability
+  score_method: None
+  sequence: 5
+  short_name: Availability
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: M
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: T
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: W
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: T
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: F
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: S
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: Can you attend training at night?
+  key: NightTraining
+  min_critical: 
+  question_text: NightTraining
+  score_method: Value
+  sequence: 6
+  short_name: NightTraining
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: Can you attend training during the day?
+  key: DayTraining
+  min_critical: 
+  question_text: Day Training
+  score_method: Value
+  sequence: 7
+  short_name: DayTraining
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: Can you attend training during on Saturdays?
+  key: SaturdayTraining
+  min_critical: 
+  question_text: Saturday
+  score_method: Value
+  sequence: 8
+  short_name: SaturdayTraining
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: true
+  group_header: Rate the following criteria on a 1 to 5 scale
+  instructions: 1 being the lowest score, 5 being the highest score
+  key: Criterion1
+  min_critical: 0.0
+  question_text: Overall Evaluation
+  score_method: Value
+  sequence: 9
+  short_name: Criterion1
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion2
+  min_critical: 
+  question_text: Criterion_2
+  score_method: Value
+  sequence: 10
+  short_name: Criterion2
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion3
+  min_critical: 
+  question_text: Criterion_3
+  score_method: Value
+  sequence: 11
+  short_name: Criterion3
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion4
+  min_critical: 
+  question_text: Criterion 4
+  score_method: Value
+  sequence: 12
+  short_name: Criterion4
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion5
+  min_critical: 
+  question_text: Criterion 5
+  score_method: Value
+  sequence: 13
+  short_name: Criterion5
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion6
+  min_critical: 
+  question_text: Criterion 6
+  score_method: Value
+  sequence: 14
+  short_name: Criterion6
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion7
+  min_critical: 
+  question_text: Criterion 7
+  score_method: Value
+  sequence: 15
+  short_name: Criterion7
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion8
+  min_critical: 
+  question_text: Criterion 8
+  score_method: Value
+  sequence: 16
+  short_name: Criterion8
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion9
+  min_critical: 
+  question_text: Criterion 9
+  score_method: Value
+  sequence: 17
+  short_name: Criterion9
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion10
+  min_critical: 
+  question_text: Criterion 10
+  score_method: Value
+  sequence: 18
+  short_name: Criterion10
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion11
+  min_critical: 
+  question_text: Criterion 11
+  score_method: Value
+  sequence: 19
+  short_name: Criterion11
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion12
+  min_critical: 
+  question_text: Criterion 12
+  score_method: Value
+  sequence: 20
+  short_name: Criterion12
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion13
+  min_critical: 
+  question_text: Criterion 13
+  score_method: Value
+  sequence: 21
+  short_name: Criterion13
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion14
+  min_critical: 
+  question_text: Criterion 14
+  score_method: Value
+  sequence: 22
+  short_name: Criterion14
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: Criterion15
+  min_critical: 
+  question_text: Criterion 15
+  score_method: None
+  sequence: 23
+  short_name: Criterion15
+  answer_layout: None
+  weight: 1.0
+  answers:
+  - answer_text: R
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: -1.0
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: ''
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: ''
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: ''
+    text_eval: 
+    value: 5.0
+- answer_tag: Radio
+  critical: false
+  group_header: AIDT use only
+  instructions: ''
+  key: DirectHire
+  min_critical: 
+  question_text: ''
+  score_method: None
+  sequence: 24
+  short_name: DirectHire
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: D
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: N
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Text
+  critical: false
+  group_header: TeleForm Fields
+  instructions: ''
+  key: ImageFilename
+  min_critical: 
+  question_text: ImageFilename
+  score_method: None
+  sequence: 25
+  short_name: ImageFilename
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: ImageFilename
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ImageFilename
+    text_eval: 
+    value: 0.0
+- answer_tag: Text
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: DocID
+  min_critical: 
+  question_text: DocID
+  score_method: None
+  sequence: 26
+  short_name: DocID
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: DocID
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: DocID
+    text_eval: 
+    value: 0.0
+- answer_tag: Text
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: FormID
+  min_critical: 
+  question_text: FormID
+  score_method: None
+  sequence: 27
+  short_name: FormID
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: FormID
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: FormID
+    text_eval: 
+    value: 0.0
+- answer_tag: Text
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: JobStageID
+  min_critical: 
+  question_text: Stage ID
+  score_method: None
+  sequence: 28
+  short_name: JobStageID
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: Stage
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Text
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: CitizenStageID
+  min_critical: 
+  question_text: Progression ID
+  score_method: None
+  sequence: 29
+  short_name: CitizenStageID
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: Progression
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 0.0

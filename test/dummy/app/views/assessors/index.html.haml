@@ -14,7 +14,6 @@
       %th Name
       %th Status
       %th Instructions
-      %th Method
       %th Actions
 
     - @assessors.each do |assessor|
@@ -25,7 +24,6 @@
         %td= assessor.name
         %td= assessor.status
         %td= assessor.instructions
-        %td= assessor.method
         %td
           = link_to 'Show', assessor
           = link_to 'Edit', edit_assessor_path(assessor)

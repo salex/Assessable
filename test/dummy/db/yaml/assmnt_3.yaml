@@ -1,0 +1,152 @@
+---
+category: citizen.education
+default_tag: ''
+default_layout: List
+description: ''
+instructions: ''
+key: Assessor.Stage.1.citizen.education
+max_raw: 5.0
+max_weighted: 5.0
+name: application.master
+status: Master
+questions:
+- answer_tag: Checkbox
+  critical: true
+  group_header: ''
+  instructions: ''
+  key: e01
+  min_critical: 3.0
+  question_text: Please check <strong>all</strong> education or training levels that
+    apply. Supply additional information if required.
+  score_method: Max
+  sequence: 1
+  short_name: Education
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: I did not complete high school and do not have a diploma or GED.
+    key: e0101
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: No Diploma/GED
+    text_eval: ''
+    value: 0.0
+  - answer_text: I did not complete high school but completed a non-diploma trade
+      school.
+    key: e0102
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: Trade School
+    text_eval: ''
+    value: 1.0
+  - answer_text: I completed high school but did not graduate (obtained certificate).
+    key: e0103
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: Certificate
+    text_eval: ''
+    value: 2.0
+  - answer_text: I completed high school through a GED program.
+    key: e0104
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: GED
+    text_eval: ''
+    value: 3.0
+  - answer_text: I completed high school and received a diploma.
+    key: e0105
+    other_question: Enter name of high school, city and state
+    requires_other: true
+    sequence: 5
+    short_name: HS Diploma
+    text_eval: ''
+    value: 4.0
+  - answer_text: I completed high school and received a diploma with a Career Tech
+      Endorsement.
+    key: e0106
+    other_question: Enter name of high school, city and state
+    requires_other: true
+    sequence: 6
+    short_name: HS Diploma/CT
+    text_eval: ''
+    value: 5.0
+  - answer_text: I completed a military technical school.
+    key: e0107
+    other_question: Enter Technical Area
+    requires_other: true
+    sequence: 7
+    short_name: Military Tech
+    text_eval: ''
+    value: 3.0
+  - answer_text: I attended an associate’s degree granting technical school/community
+      college b
+    key: e0108
+    other_question: ''
+    requires_other: false
+    sequence: 8
+    short_name: Some Assoc
+    text_eval: ''
+    value: 3.0
+  - answer_text: I received an associate’s degree from a technical school/community
+      college.
+    key: e0109
+    other_question: Enter degree, institute, and year completed
+    requires_other: true
+    sequence: 9
+    short_name: Assoc Degree
+    text_eval: ''
+    value: 5.0
+  - answer_text: I attended an accredited, degree-granting college/university but
+      did not receive
+    key: e0110
+    other_question: ''
+    requires_other: false
+    sequence: 10
+    short_name: Some College
+    text_eval: ''
+    value: 3.0
+  - answer_text: I received a BS/BA degree from an accredited, degree-granting college/university
+    key: e0111
+    other_question: Enter degree, institute, and year completed
+    requires_other: true
+    sequence: 11
+    short_name: BS/BA Degree
+    text_eval: ''
+    value: 4.0
+  - answer_text: I attended a masters degree program (MS/MS) but did receive a degree.
+    key: e0112
+    other_question: ''
+    requires_other: false
+    sequence: 12
+    short_name: Some Masters
+    text_eval: ''
+    value: 3.0
+  - answer_text: I received an MS/MA degree from an accredited, degree-granting college/university
+    key: e0113
+    other_question: Enter degree, institute, and year completed
+    requires_other: true
+    sequence: 13
+    short_name: MS/MA Degree
+    text_eval: ''
+    value: 3.0
+  - answer_text: I attended a doctorate degree program (PHd) but did receive a degree.
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 14
+    short_name: Some Doctorate
+    text_eval: 
+    value: 3.0
+  - answer_text: I received an doctorates degree from an accredited, degree-granting
+      college/university
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 15
+    short_name: Doctorate Degree
+    text_eval: 
+    value: 2.0

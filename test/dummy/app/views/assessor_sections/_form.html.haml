@@ -29,6 +29,10 @@
   .field
     = f.label :category
     = f.text_field :category
+    .field
+      = f.label :model_method
+      = f.text_field :model_method
+    
   - unless @assessor_section.id.nil?
     .field
       %label Max

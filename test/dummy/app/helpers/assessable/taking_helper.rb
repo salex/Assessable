@@ -15,7 +15,7 @@ module Assessable
       def initialize(published_assessment,post=nil)
         @assessment = published_assessment
         @post = post
-        @all_answers = @post["answer"].values.flatten if @post
+        @all_answers = @post["answer"].values.flatten if @post && @post["answer"]
         @html = render_assessment
       end
       
@@ -155,7 +155,7 @@ module Assessable
         text = ""
         exists = false
         other = ""
-        if @post
+        if @all_answers
           #Answers from a previous application or session are in the Params collection - values are extracted
           #into the variables exist, other, and text 
           if !@all_answers.index(answer_id).nil?

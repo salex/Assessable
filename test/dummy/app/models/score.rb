@@ -12,7 +12,8 @@ class Score < ActiveRecord::Base
     a_id = taking["assessed_id"]
     assessed = a_type.where(:id => a_id).first
     sections.each do |section|
-      score = assessed.scores.where(:assessor_section_id => section).first
+      score = assessed.scores.where(:assessor_section_id => section).first  unless taking['repeating']
+      # new score created if repeating assessment (e.g., annual evaluation)
       unless score
         score = Score.new(:assessor_section_id => section)
         score.assessed = assessed
@@ -45,7 +46,7 @@ class Score < ActiveRecord::Base
     assessed = a_type.where(:id => a_id).first
     lcv = 0
     sections.each do |section|
-      score = assessed.scores.where(:assessor_section_id => section).first
+      score = assessed.scores.where(:assessor_section_id => section).first  unless taking['repeating']
       unless score
         score = Score.new(:assessor_section_id => section)
         score.assessed = assessed

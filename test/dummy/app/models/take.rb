@@ -1,12 +1,13 @@
 class Take
-  attr_accessor  :stash, :session, :assessed, :assessor, :section, :post
+  attr_accessor  :stash, :taking, :assessed, :assessor, :section, :post
   
   def initialize(session,clear=false)
     ## Get or create a Stash instance by session_id
-    self.stash = Assessing.get_stash(session)
+    @stash = Assessing.get_stash(session)
     if clear
       @stash.data = nil
-      @stash.session = {}
+      @stash.session = {'user_id' => session['user_id']}
+      @stash.save
     end
   end
   
@@ -16,71 +17,74 @@ class Take
     @assessed = assessed
     @assessor = assessor
     if opt["section"]
-      @sections = @assessor.assessor_sections.where(:status => "active.#{@session["controller"]}", id:  opt["section"])
+      @sections = @assessor.assessor_sections.where(:status => "active", id:  opt["section"]).where("model_method is NULL")
     else
-      @sections = @assessor.assessor_sections.where(:status => "active.#{@session["controller"]}")
+      @sections = @assessor.assessor_sections.where(:status => "active").where("model_method is NULL")
     end
-    @session["assessor_id"] = @assessor.id
-    @session["sections"] = @sections.pluck(:id)
-    @session["names"] = @sections.pluck(:name)
-    @session["status"] = Array.new(@session["sections"].count)
-    @session["assessed_type"] = @assessed.class.name
-    @session["assessed_id"] = @assessed.id
-    @session["complete"] = false
-    @session["idx"] = 0
+    model_methods = @assessor.assessor_sections.where(:status => "active").where("model_method NOT NULL")
+    @taking["models"] = model_methods.pluck(:id) unless model_methods.empty?
+    @taking["repeating"] = @assessor.repeating
+    @taking["before"] = @assessor.before_method
+    @taking["after"] = @assessor.after_method
+    @taking["by_user"] = @stash.session['user_id']
+    @taking["assessor_id"] = @assessor.id
+    @taking["sections"] = @sections.pluck(:id)
+    @taking["names"] = @sections.pluck(:name)
+    @taking["status"] = Array.new(@taking["sections"].count)
+    @taking["assessed_type"] = @assessed.class.name
+    @taking["assessed_id"] = @assessed.id
+    @taking["complete"] = false
+    @taking['can_take'] = can_take? if opt["method"]
+    @taking["idx"] = 0
     return opt
   end
   
   def apply_setup(assessor,assessed,options={})
-    @session = {"controller" => "apply"}
+    @taking = {"controller" => "apply"}
     opt = common_setup(assessor,assessed,options)
-    @session["models"] = @assessor.assessor_sections.where(:status => "active.model").pluck(:id)
     ## setup after hooks
-    @stash.session["taking"] = @session
+    @stash.session["taking"] = @taking
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if  opt["method"]
       ## call before hook
-      @session["can_do"] = @assessed.send( opt["method"],@assessor)
+      @taking["can_do"] = @assessed.send( opt["method"],@assessor)
     end
     return self
   end
   
-  def score_setup(assessor,assessed,by,options={})
-    @session = {"controller" => "score"}
-    @by = by
+  def score_setup(assessor,assessed,options={})
+    @taking = {"controller" => "score"}
     opt = common_setup(assessor,assessed,options)
-    @stash.session["taking"] = @session
+    @stash.session["taking"] = @taking
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if opt["method"]
       ## call before hook
-      @session["can_do"] = @assessed.send(method,@assessor)
+      @taking["can_do"] = @assessed.send(method,@assessor)
     end
     return self
   end
   
-  def evaluate_setup(assessor,assessed,by,options={})
-    @session = {"controller" => "evaluate"}
-    @by = by
+  def evaluate_setup(assessor,assessed,options={})
+    @taking = {"controller" => "evaluate"}
     opt = common_setup(assessor,assessed,options)
-    @stash.session["taking"] = @session
+    @stash.session["taking"] = @taking
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     if opt["method"]
       ## call before hook
-      @session["can_do"] = @assessed.send(method,@assessor)
+      #@taking["can_do"] = @assessed.send(method,@assessor)
     end
     return self
   end
   
-  def survey_setup(assessor,by,options={})
+  def survey_setup(assessor,options={})
     assessed = User.where(:role => "Guest").first
-    @session = {"controller" => "survey"}
-    @by = by
+    @taking = {"controller" => "survey"}
     opt = common_setup(assessor,assessed,options)
-    @session["max"] = @sections.pluck(:max)
-    @stash.session["taking"] = @session
+    @taking["max"] = @sections.pluck(:max)
+    @stash.session["taking"] = @taking
     ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     return self
@@ -91,7 +95,8 @@ class Take
     taking = @stash.session["taking"]
     @section = AssessorSection.find(taking["sections"][taking["idx"]])
     @post = @stash.get_post(taking["sections"][taking["idx"]])
-    if @post.nil?
+    if !taking['repeating'] && @post.nil?
+      # if not repeating assessment (e.g. annual evalution) look for previous score
       assessed = get_assessed
       score = assessed.scores.where(:assessor_section_id => taking["sections"][taking["idx"]]).first
       unless score.nil?
@@ -141,6 +146,23 @@ class Take
       score.scoring = post
       score.save
     end
+  end
+  
+  def can_take?
+    return send("can_#{@taking['controller']}?")
+  end
+  
+  def can_apply?
+    true
+  end
+  def can_survey?
+    true
+  end
+  def can_score?
+    true
+  end
+  def can_evaluate?
+    true
   end
   
 end

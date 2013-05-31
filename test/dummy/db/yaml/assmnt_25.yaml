@@ -1,0 +1,3167 @@
+---
+category: survey.exit.project
+default_tag: Radio
+default_layout: Inline
+description: AIDT Pre-employment Exit Interview
+instructions: Please assist us by completing this survey on the quality of service
+  AIDT provides client companies. Your candid responses to these questions as they
+  relate to your experience with AIDT will help ensure our continuous improvement
+  and plan for and meet the training needs of Alabama industry. Thank you for your
+  help.
+key: Evaluator.survey.exit.pree
+max_raw: 240.0
+max_weighted: 240.0
+name: Exit Survey
+status: Locked
+questions:
+- answer_tag: Radio
+  critical: false
+  group_header: 1 = Very Dissatisfied, 3  = Satisfied 5 = Very Satisfied, NA = Not
+    Applicable
+  instructions: ! "1. PROJECT MANAGEMENT\r\nPlease rate your satisfaction with the
+    following aspects of Project Management: (Score Each)"
+  key: ''
+  min_critical: 
+  question_text: Project Manager's understanding of my business needs.
+  score_method: Value
+  sequence: 1
+  short_name: PM understands needs
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Project Manager's availability to meet my needs.
+  score_method: Value
+  sequence: 2
+  short_name: PM availability
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Instructor and program outline preparation.
+  score_method: Value
+  sequence: 3
+  short_name: instructor outline
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Clarity of communication of AIDT commitment and program guidelines,
+    including documentation requirements.
+  score_method: Value
+  sequence: 4
+  short_name: commitment clarity
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Project Manager contacts/visits during program.
+  score_method: Value
+  sequence: 5
+  short_name: PM contacts/visits
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Response to requested adjustments or changes during training program.
+  score_method: Value
+  sequence: 6
+  short_name: PM manage changes
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Reliability in meeting agreed upon schedules.
+  score_method: Value
+  sequence: 7
+  short_name: meet schedules
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Assistance with and clarity of information about AIDT paperwork.
+  score_method: Value
+  sequence: 8
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Coordination of project activities and communication of guidelines.
+  score_method: Value
+  sequence: 9
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: AIDT's fulfillment of original expectations.
+  score_method: Value
+  sequence: 10
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Length of program hours, sessions, weeks.
+  score_method: Value
+  sequence: 11
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Methods of recruiting advertisement.
+  score_method: Value
+  sequence: 12
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Usefulness of information requested on AIDT application.
+  score_method: Value
+  sequence: 13
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Interview scheduling and notification of selected trainees.
+  score_method: Value
+  sequence: 14
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Time allotted for each applicant interview.
+  score_method: Value
+  sequence: 15
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: AIDT Project Manager assistance with interviews.
+  score_method: Value
+  sequence: 16
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Accessibility/Cooperation of application collection site(s).
+  score_method: Value
+  sequence: 17
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Applicant screening process.
+  score_method: Value
+  sequence: 18
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Program content in terms of relevance to the job functions and skills.
+  score_method: Value
+  sequence: 19
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Knowledge level of instructor(s).
+  score_method: Value
+  sequence: 20
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Instructional ability of instructor(s).
+  score_method: Value
+  sequence: 21
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Knowledge and skill of trainees completing training.
+  score_method: Value
+  sequence: 22
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Flexibility of training schedule to meet your staffing requirements.
+  score_method: Value
+  sequence: 23
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: 1 = Very Dissatisfied, 3  = Satisfied 5 = Very Satisfied, NA = Not
+    Applicable
+  instructions: ! '2. PROJECT SUPPORT Please rate your satisfaction with the following
+    aspects of Project Support: (Score Each)'
+  key: ''
+  min_critical: 
+  question_text: Assistance in identifying and providing training hardware needs.
+  score_method: Value
+  sequence: 24
+  short_name: PS understands needs
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Delivery, setup and condition of mobile training units.
+  score_method: Value
+  sequence: 25
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Training hardware usefulness.
+  score_method: Value
+  sequence: 26
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Training hardware condition.
+  score_method: Value
+  sequence: 27
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Adequate amount of training hardware.
+  score_method: Value
+  sequence: 28
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Maintenance assessment measured applicant's abilities in relation
+    to my needs.
+  score_method: Value
+  sequence: 29
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Usefulness of information provided on safety assessment.
+  score_method: Value
+  sequence: 30
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Timely delivery of training hardware.
+  score_method: Value
+  sequence: 31
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ! '3. MEDIA Please rate your satisfaction with the following aspects
+    of Media: (Score Each)'
+  key: ''
+  min_critical: 
+  question_text: Assistance in developing / providing audio-visual materials.
+  score_method: Value
+  sequence: 32
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Layout and wording of recruiting ad.
+  score_method: Value
+  sequence: 33
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Quality of the audio-visual materials.
+  score_method: Value
+  sequence: 34
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Print quality of printed material. (Binders, Tabs, Covers, Handouts,
+    Manuals)
+  score_method: Value
+  sequence: 35
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Timely completion & delivery of audio-visual materials that meet
+    your needs.
+  score_method: Value
+  sequence: 36
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ! '4. TRAINING DEVELOPMENT (Training/Instructor Manuals, Handouts,
+    Powerpoints) Please rate your satisfaction with the following aspects of Training
+    Development: (Score Each)'
+  key: ''
+  min_critical: 
+  question_text: Layout and organization of the training materials.
+  score_method: Value
+  sequence: 37
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Reading comprehension level of the training materials.
+  score_method: Value
+  sequence: 38
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: AIDT interaction with company during development of materials.
+  score_method: Value
+  sequence: 39
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Content in the training materials.
+  score_method: Value
+  sequence: 40
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Overall appearance of the training materials.
+  score_method: Value
+  sequence: 41
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Timely completion and delivery of training materials.
+  score_method: Value
+  sequence: 42
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ! '5. BUSINESS MANAGEMENT (FINANCE) Please rate your satisfaction
+    with the following aspects of Finance: (Score)'
+  key: ''
+  min_critical: 
+  question_text: Assistance with securing payment of reimbursements as scheduled.
+  score_method: Value
+  sequence: 44
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ! '6. PROPERTY MANAGEMENT Please rate your satisfaction with the following
+    aspects of Property Management: (Score)'
+  key: ''
+  min_critical: 
+  question_text: Serviceability of audio-visual equipment provided.
+  score_method: Value
+  sequence: 45
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ! '7. APPLICANT INFORMATION Please rate your satisfaction with the
+    following aspects related to the Applicant: (Score Each)'
+  key: ''
+  min_critical: 
+  question_text: Number of applicants responding.
+  score_method: Value
+  sequence: 46
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Quality of applicants responding.
+  score_method: Value
+  sequence: 47
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Number of trainees completing training.
+  score_method: Value
+  sequence: 48
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: Attitude of trainees completing training.
+  score_method: Value
+  sequence: 49
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: '1'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: '1'
+    text_eval: 
+    value: 1.0
+  - answer_text: '2'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: '2'
+    text_eval: 
+    value: 2.0
+  - answer_text: '3'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: '3'
+    text_eval: 
+    value: 3.0
+  - answer_text: '4'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 4
+    short_name: '4'
+    text_eval: 
+    value: 4.0
+  - answer_text: '5'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 5
+    short_name: '5'
+    text_eval: 
+    value: 5.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 6
+    short_name: NA
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: (Choose Yes or No)
+  instructions: ! "8. FUTURE PLANNING To allow AIDT to meet your future needs and
+    improve our services, please answer the following questions:<br />\r\n(a) Do you
+    anticipate a future need for pre-employment services currently provided by AIDT?"
+  key: ''
+  min_critical: 
+  question_text: (If “YES”, please briefly describe the services and your anticipated
+    timetable in the space provided below.)
+  score_method: None
+  sequence: 50
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: Describe future service
+    requires_other: true
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: (Choose Yes or No)
+  instructions: (b) Are you interested in scheduling any of the following value-added
+    AIDT services?
+  key: ''
+  min_critical: 
+  question_text: ! '&bull; Process Improvement Assessment'
+  score_method: None
+  sequence: 51
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: Describe future service
+    requires_other: true
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: ! '&bull; Leadership Development Training'
+  score_method: None
+  sequence: 52
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: ! '&bull; Safety Assessment'
+  score_method: None
+  sequence: 53
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: ! '&bull; Maintenance Assessment (Applicant Only)'
+  score_method: None
+  sequence: 54
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 1.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Textarea
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: ''
+  min_critical: 
+  question_text: (c) What services not currently provided by AIDT would you like us
+    to provide?
+  score_method: None
+  sequence: 55
+  short_name: ''
+  answer_layout: List
+  weight: 1.0
+  answers:
+  - answer_text: New Service(s)
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: (d) Have you contacted or been contacted by the Alabama Community
+    College System (TEBI, ATN, Community or Technical College) ?
+  key: ''
+  min_critical: 
+  question_text: ! 'If yes, were they able to meet your needs? '
+  score_method: Value
+  sequence: 56
+  short_name: ''
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: 
+    other_question: Please explain.
+    requires_other: true
+    sequence: 1
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: 'No'
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: 
+    value: 0.0
+  - answer_text: NA
+    key: 
+    other_question: ''
+    requires_other: false
+    sequence: 3
+    short_name: ''
+    text_eval: 
+    value: 0.0

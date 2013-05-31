@@ -19,8 +19,18 @@
     %b Instructions:
     = @assessor.instructions
   %p
-    %b Method:
-    = @assessor.method
+    %b Before Method:
+    = @assessor.before_method
+  %p
+    %b After Method:
+    = @assessor.after_method
+  %p
+    %b Sectionable:
+    = @assessor.sectionable
+  %p
+    %b Repeating:
+    = @assessor.repeating
+    
 
 .navbar
   = link_to 'Edit', edit_assessor_path(@assessor)

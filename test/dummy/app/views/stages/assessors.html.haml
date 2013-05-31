@@ -11,7 +11,7 @@
       %th Name
       %th Status
       %th Instructions
-      %th Method
+      %th Before Method
       %th Actions
 
     - @assessors.each do |assessor|
@@ -21,7 +21,7 @@
         %td= assessor.name
         %td= assessor.status
         %td= assessor.instructions
-        %td= assessor.method
+        %td= assessor.before_method
         %td
           - case @status
           - when "active.survey"
@@ -33,7 +33,7 @@
                   
             
           - when "active.evaluate"
-            = link_to 'Evaluate', evaluate_take_path(assessor)
+            = link_to 'Evaluate', evaluate_take_path(assessor,:assessed => params[:assessed], :assessed_id => params[:assessed_id])
           - when "active.score"
             %ul
               %li= link_to 'Score(All)', score_take_path(assessor,:assessed => params[:assessed], :assessed_id => params[:assessed_id])

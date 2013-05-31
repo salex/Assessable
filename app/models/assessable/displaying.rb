@@ -230,8 +230,10 @@ module Assessable
           rclass = post['scores']['critical'].index(qkey).nil? ? rclass : (rclass += " failed"  )
         end
         rclass = "class=\"#{rclass}\"" unless rclass.blank?
-
-        html << "<tr #{rclass}><td>#{question_text}</td><td>#{all}</td><td>#{post['scores'][qkey]['raw']}</td><td>#{post['scores'][qkey]['weighted']}</td></tr>"
+        rscore = post['scores'][qkey].nil? ? "" : post['scores'][qkey]['raw']
+        wscore = post['scores'][qkey].nil? ? "" : post['scores'][qkey]['weighted']
+        
+        html << "<tr #{rclass}><td>#{question_text}</td><td>#{all}</td><td>#{rscore}</td><td>#{wscore}</td></tr>"
       end
       html << "<tr class=\"list-header\"><td></td><td>Total</td><td>#{post['scores']["total"]['raw']}</td><td>#{post['scores']["total"]['weighted']}</td></tr>"
       

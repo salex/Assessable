@@ -37,9 +37,9 @@ module Assessable
           else
             value = answer_values.max
           end
+          max_raw += value
+          max_weighted += (value * question['weight'])
         end
-        max_raw += value
-        max_weighted += (value * question['weight'])
       end
       if published["max_raw"] != max_raw || published["max_weighted"] != max_weighted
         published["max_raw"] = max_raw
@@ -105,15 +105,17 @@ module Assessable
       questions = assmnt["questions"]
       assmnt.delete("questions")
       new_assmnt = self.new(assmnt)
-      new_assmnt.save
-      questions.each do |question|
-        answers = question["answers"]
-        question.delete("answers")
-        new_question = new_assmnt.questions.build(question)
-        new_question.save
-        answers.each do |answer|
-          new_answer = new_question.answers.build(answer)
-          new_answer.save
+      new_assmnt.transaction do
+        new_assmnt.save
+        questions.each do |question|
+          answers = question["answers"]
+          question.delete("answers")
+          new_question = new_assmnt.questions.build(question)
+          new_question.save
+          answers.each do |answer|
+            new_answer = new_question.answers.build(answer)
+            new_answer.save
+          end
         end
       end
     end

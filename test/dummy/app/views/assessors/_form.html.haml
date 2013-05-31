@@ -28,7 +28,17 @@
     = f.label :instructions
     = f.text_field :instructions
   .field
-    = f.label :method
-    = f.text_field :method
+    = f.label :before_method
+    = f.text_field :before_method
+  .field
+    = f.label :after_method
+    = f.text_field :after_method
+  .field
+    = f.label :sectionable
+    = f.check_box :sectionable
+  .field
+    = f.label :repeating
+    = f.check_box :repeating
+    
   .actions
     = f.submit 'Save'

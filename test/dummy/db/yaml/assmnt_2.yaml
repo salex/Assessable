@@ -1,0 +1,391 @@
+---
+category: citizen.general
+default_tag: Radio
+default_layout: Inline
+description: All applicants for AIDT training are required to provide some general
+  information that applies to all applications. This information may or may not be
+  used on the application for this training.
+instructions: ''
+key: Assessor.Stage.1.citizen.availibility
+max_raw: 13.0
+max_weighted: 13.0
+name: application.master
+status: Master
+questions:
+- answer_tag: Radio
+  critical: false
+  group_header: Please check Yes or No to the following questions
+  instructions: ''
+  key: g01
+  min_critical: 0.0
+  question_text: Have you been employed previously by this company?
+  score_method: Value
+  sequence: 1
+  short_name: Previously Employed
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0101
+    other_question: What was your job?
+    requires_other: true
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+  - answer_text: 'No'
+    key: g0102
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: g02
+  min_critical: 0.0
+  question_text: Are you related to anyone now employed by this company?
+  score_method: Value
+  sequence: 2
+  short_name: Related Employee
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0201
+    other_question: Enter name and relation?
+    requires_other: true
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+  - answer_text: 'No'
+    key: g0202
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: train_night
+  min_critical: 0.0
+  question_text: Are you able to attend training at night?
+  score_method: Value
+  sequence: 3
+  short_name: Train Night
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0301
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0302
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: train_day
+  min_critical: 0.0
+  question_text: Are you able to attend training during the day?
+  score_method: Value
+  sequence: 4
+  short_name: Train Day
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0401
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0402
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: train_saturday
+  min_critical: 0.0
+  question_text: Are you able to attend training on Saturday?
+  score_method: Value
+  sequence: 5
+  short_name: Train Saturday
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0501
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0502
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: g06
+  min_critical: 0.0
+  question_text: Are you a citizen of the United States?
+  score_method: Value
+  sequence: 6
+  short_name: US Citizen
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0601
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0602
+    other_question: ! 'Enter work permit #'
+    requires_other: true
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_shift_1
+  min_critical: 0.0
+  question_text: If required, are you willing to work 1st Shift?
+  score_method: Value
+  sequence: 7
+  short_name: 1st Shift
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0701
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0702
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_shift_2
+  min_critical: 0.0
+  question_text: If required, are you willing to work 2nd Shift?
+  score_method: Value
+  sequence: 8
+  short_name: 2nd Shift
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0801
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0802
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_shift_3
+  min_critical: 0.0
+  question_text: If required, are you willing to work 3rd Shift?
+  score_method: Value
+  sequence: 9
+  short_name: 3rd Shift
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g0901
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g0902
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: true
+  group_header: ''
+  instructions: ''
+  key: work_shift_swing
+  min_critical: 1.0
+  question_text: If required, are you willing to work Swing/Rotating Shifts?
+  score_method: Value
+  sequence: 10
+  short_name: Swing Shift
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g1001
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g1002
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_overtime
+  min_critical: 0.0
+  question_text: If required, are you willing to work overtime?
+  score_method: Value
+  sequence: 11
+  short_name: Work overtime
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g1101
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g1102
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_weekends
+  min_critical: 0.0
+  question_text: If required, are you willing to work weekends?
+  score_method: Value
+  sequence: 12
+  short_name: Work weekends
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g1201
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g1202
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0
+- answer_tag: Radio
+  critical: false
+  group_header: ''
+  instructions: ''
+  key: work_holidays
+  min_critical: 0.0
+  question_text: If required, are you willing to work holidays?
+  score_method: Value
+  sequence: 13
+  short_name: Work holidays
+  answer_layout: Inline
+  weight: 1.0
+  answers:
+  - answer_text: 'Yes'
+    key: g1301
+    other_question: ''
+    requires_other: false
+    sequence: 1
+    short_name: ''
+    text_eval: ''
+    value: 1.0
+  - answer_text: 'No'
+    key: g1302
+    other_question: ''
+    requires_other: false
+    sequence: 2
+    short_name: ''
+    text_eval: ''
+    value: 0.0

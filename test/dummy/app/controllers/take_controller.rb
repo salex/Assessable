@@ -15,7 +15,7 @@ class TakeController < ApplicationController
     @assessor = Assessor.find(params[:id])
     assess = params[:assessed].capitalize.constantize
     @assessed = assess.find(params[:assessed_id])
-    @taking = taking.score_setup(@assessor,@assessed,current_user,method: :can_eval, section: params[:section])
+    @taking = taking.score_setup(@assessor,@assessed,method: :can_eval, section: params[:section])
     section
   end
   
@@ -25,7 +25,7 @@ class TakeController < ApplicationController
     @assessor = Assessor.find(params[:id])
     assess = params[:assessed].capitalize.constantize
     @assessed = assess.find(params[:assessed_id])
-    @taking = taking.evaluate_setup(@assessor,@assessed,current_user,method: :can_eval, section: params[:section])
+    @taking = taking.evaluate_setup(@assessor,@assessed,method: :can_eval, section: params[:section], :repeating => true)
     section
   end
   
@@ -34,7 +34,7 @@ class TakeController < ApplicationController
     ## Called from a guest user
     taking = Take.new(session,true)
     @assessor = Assessor.find(params[:id])
-    @taking = taking.survey_setup(@assessor,current_user,section: params[:section])
+    @taking = taking.survey_setup(@assessor,section: params[:section])
     section
   end
 
