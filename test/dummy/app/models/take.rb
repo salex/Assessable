@@ -1,3 +1,5 @@
+# Take is an example of how to use Assessable in a poloymophic Assessor, Assessed, Score, {by} environment
+
 class Take
   attr_accessor  :stash, :taking, :assessed, :assessor, :section, :post
   
@@ -13,6 +15,9 @@ class Take
   
   def common_setup(assessor,assessed,options)
     ## Setup and session with control information
+    # some fields are used by the Take class, others may be used by the controller.
+    # i.e., an after_method progression.rollup would be called passing take, which should contain all the info needed 
+    # to rollup scores and set progressions status, etc
     opt = options.stringify_keys
     @assessed = assessed
     @assessor = assessor
@@ -34,7 +39,7 @@ class Take
     @taking["assessed_type"] = @assessed.class.name
     @taking["assessed_id"] = @assessed.id
     @taking["complete"] = false
-    @taking['can_take'] = can_take? if opt["method"]
+    @taking['can_take'] = can_take? if @taking["before"]
     @taking["idx"] = 0
     return opt
   end
@@ -42,14 +47,8 @@ class Take
   def apply_setup(assessor,assessed,options={})
     @taking = {"controller" => "apply"}
     opt = common_setup(assessor,assessed,options)
-    ## setup after hooks
     @stash.session["taking"] = @taking
-    ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
-    if  opt["method"]
-      ## call before hook
-      @taking["can_do"] = @assessed.send( opt["method"],@assessor)
-    end
     return self
   end
   
@@ -57,12 +56,7 @@ class Take
     @taking = {"controller" => "score"}
     opt = common_setup(assessor,assessed,options)
     @stash.session["taking"] = @taking
-    ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
-    if opt["method"]
-      ## call before hook
-      @taking["can_do"] = @assessed.send(method,@assessor)
-    end
     return self
   end
   
@@ -70,12 +64,6 @@ class Take
     @taking = {"controller" => "evaluate"}
     opt = common_setup(assessor,assessed,options)
     @stash.session["taking"] = @taking
-    ## singlescore see if has score and put score.scoring["post"] into stash,data
-    @stash.save
-    if opt["method"]
-      ## call before hook
-      #@taking["can_do"] = @assessed.send(method,@assessor)
-    end
     return self
   end
   
@@ -85,20 +73,19 @@ class Take
     opt = common_setup(assessor,assessed,options)
     @taking["max"] = @sections.pluck(:max)
     @stash.session["taking"] = @taking
-    ## singlescore see if has score and put score.scoring["post"] into stash,data
     @stash.save
     return self
   end
   
   
   def get_section
-    taking = @stash.session["taking"]
-    @section = AssessorSection.find(taking["sections"][taking["idx"]])
-    @post = @stash.get_post(taking["sections"][taking["idx"]])
-    if !taking['repeating'] && @post.nil?
+    @taking = @stash.session["taking"]
+    @section = AssessorSection.find(@taking["sections"][@taking["idx"]])
+    @post = @stash.get_post(@taking["sections"][@taking["idx"]])
+    if !@taking['repeating'] && @post.nil?
       # if not repeating assessment (e.g. annual evalution) look for previous score
       assessed = get_assessed
-      score = assessed.scores.where(:assessor_section_id => taking["sections"][taking["idx"]]).first
+      score = assessed.scores.where(:assessor_section_id => @taking["sections"][@taking["idx"]]).first
       unless score.nil?
         @post = score.scoring
       end
@@ -107,23 +94,23 @@ class Take
   end
   
   def set_post(post)
-    taking = @stash.session["taking"]
-    @section = AssessorSection.find(taking["sections"][taking["idx"]])
+    @taking = @stash.session["taking"]
+    @section = AssessorSection.find(@taking["sections"][@taking["idx"]])
     post = Assessing.score_assessment(@section.published,post).scored_post
-    post_idx = taking["idx"]
-    taking["status"][taking["idx"]] = true
-    new_idx = taking["status"].index(nil)
-    taking["idx"]  = new_idx
-    taking["complete"] = new_idx.nil?
-    @stash.session["taking"] = taking
-    @stash = @stash.set_post(taking["sections"][post_idx],post) # saves stash
-    return taking["complete"]
+    post_idx = @taking["idx"]
+    @taking["status"][@taking["idx"]] = true
+    new_idx = @taking["status"].index(nil)
+    @taking["idx"]  = new_idx
+    @taking["complete"] = new_idx.nil?
+    @stash.session["taking"] = @taking
+    @stash = @stash.set_post(@taking["sections"][post_idx],post) # saves stash
+    return @taking["complete"]
   end
   
   def get_assessed
-    taking = @stash.session["taking"]
-    assessed_model = taking["assessed_type"].constantize
-    assessed_id = taking["assessed_id"]
+    @taking = @stash.session["taking"]
+    assessed_model = @taking["assessed_type"].constantize
+    assessed_id = @taking["assessed_id"]
     assessed = assessed_model.find(assessed_id)
   end
   
@@ -148,6 +135,7 @@ class Take
     end
   end
   
+  # This is envisioned as a front end to either ability calls or model calls (e.g., application can't be modified')
   def can_take?
     return send("can_#{@taking['controller']}?")
   end
