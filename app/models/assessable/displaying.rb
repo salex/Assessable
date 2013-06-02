@@ -152,7 +152,7 @@ module Assessable
         if @post
           #Answers from a previous application or session are in the Params collection - values are extracted
           #into the variables exist, other, and text 
-          if !@all_answers.index(answer_id).nil?
+          unless @all_answers.index(answer_id).nil?
             exists = true
             other = @post["other"][answer_id] if @post["other"]
             text = @post["text"][answer_id] if @post["text"]

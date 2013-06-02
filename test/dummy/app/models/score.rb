@@ -22,11 +22,8 @@ class Score < ActiveRecord::Base
       score.category = AssessorSection.find(section).category
       score.raw = score.scoring["scores"]["percent"]["raw"]
       score.weighted = score.scoring["scores"]["percent"]["weighted"]
-      score.answers = "|"
       all_answers = score.scoring["answer"].values.flatten 
-      all_answers.each do |v|
-        score.answers += (v.to_i).to_s + "|"
-      end
+      score.answers = "|" + all_answers.join("|") + "|"
       if score.scoring["critical"].nil?
         score.status = "Passed"
       else
@@ -37,6 +34,9 @@ class Score < ActiveRecord::Base
   end
   
   def self.post_survey(stash)
+    # This is an example how to take the post/score object from score and repurpose it for an annomus survey.
+    # The assessed model is constant for a survey (guest user in this case)
+    # The score object is parsed into a new object that contains things like count for each answer for each question
     taking = stash.session["taking"]
     posts = stash.data["post"]
     sections = taking["sections"]
@@ -50,7 +50,7 @@ class Score < ActiveRecord::Base
       unless score
         score = Score.new(:assessor_section_id => section)
         score.assessed = assessed
-        score.scoring = {"count" => 0, "questions" => {},"all" => []}
+        score.scoring = {"count" => 0, "questions" => {}}
       end
       post = posts[section.to_s]
       s = score.scoring

@@ -13,73 +13,71 @@ class Take
     end
   end
   
-  def common_setup(assessor,assessed,options)
+  def common_setup(controller,assessor,assessed,options)
     ## Setup and session with control information
-    # some fields are used by the Take class, others may be used by the controller.
+    # taking is a mini-controller for the take process.
+    # some fields are used by the Take class, others may be used by the controller or Score model.
     # i.e., an after_method progression.rollup would be called passing take, which should contain all the info needed 
     # to rollup scores and set progressions status, etc
     opt = options.stringify_keys
     @assessed = assessed
     @assessor = assessor
+    # if section.id is passes in option, only that section is fetched
     if opt["section"]
       @sections = @assessor.assessor_sections.where(:status => "active", id:  opt["section"]).where("model_method is NULL")
     else
       @sections = @assessor.assessor_sections.where(:status => "active").where("model_method is NULL")
     end
+    # model_methods are not scored by take, but buy the take controller, this sets up what needs to be scored
     model_methods = @assessor.assessor_sections.where(:status => "active").where("model_method NOT NULL")
-    @taking["models"] = model_methods.pluck(:id) unless model_methods.empty?
-    @taking["repeating"] = @assessor.repeating
+    
+    @taking = {"controller" => controller}
+    # Itmes from assessor
+    @taking["repeating"] = @assessor.repeating # repeating assessors do not look for old posts
     @taking["before"] = @assessor.before_method
     @taking["after"] = @assessor.after_method
-    @taking["by_user"] = @stash.session['user_id']
+    @taking["by_user"] = @stash.session['user_id'] # current user
     @taking["assessor_id"] = @assessor.id
+    # Items from sections
     @taking["sections"] = @sections.pluck(:id)
     @taking["names"] = @sections.pluck(:name)
-    @taking["status"] = Array.new(@taking["sections"].count)
+    @taking["max"] = @sections.pluck(:max) # used in setting score.scoring for survey
+    @taking["models"] = model_methods.pluck(:id) unless model_methods.empty?
     @taking["assessed_type"] = @assessed.class.name
     @taking["assessed_id"] = @assessed.id
+    # set up initial parameters
+    @taking["status"] = Array.new(@taking["sections"].count) 
     @taking["complete"] = false
-    @taking['can_take'] = can_take? if @taking["before"]
+    @taking['can_take'] = can_take? if @taking["before"] # call before hook
     @taking["idx"] = 0
-    return opt
+    @stash.session["taking"] = @taking
+    @stash.save
+    return self
   end
   
   def apply_setup(assessor,assessed,options={})
-    @taking = {"controller" => "apply"}
-    opt = common_setup(assessor,assessed,options)
-    @stash.session["taking"] = @taking
-    @stash.save
-    return self
+    return common_setup("apply",assessor,assessed,options)
   end
   
   def score_setup(assessor,assessed,options={})
-    @taking = {"controller" => "score"}
-    opt = common_setup(assessor,assessed,options)
-    @stash.session["taking"] = @taking
-    @stash.save
-    return self
+    return common_setup("score",assessor,assessed,options)
   end
   
   def evaluate_setup(assessor,assessed,options={})
-    @taking = {"controller" => "evaluate"}
-    opt = common_setup(assessor,assessed,options)
-    @stash.session["taking"] = @taking
-    @stash.save
-    return self
+    return common_setup("evaluate",assessor,assessed,options)
   end
   
   def survey_setup(assessor,options={})
     assessed = User.where(:role => "Guest").first
-    @taking = {"controller" => "survey"}
-    opt = common_setup(assessor,assessed,options)
-    @taking["max"] = @sections.pluck(:max)
-    @stash.session["taking"] = @taking
-    @stash.save
-    return self
+    return common_setup("survey",assessor,assessed,options)
   end
   
   
   def get_section
+    # it will get the current session using an index into the sections array
+    # it will get the post out of the stash, if there (revisit) or,
+    # it will try to get a post from a previouse score, unless it is repeating
+    
     @taking = @stash.session["taking"]
     @section = AssessorSection.find(@taking["sections"][@taking["idx"]])
     @post = @stash.get_post(@taking["sections"][@taking["idx"]])
