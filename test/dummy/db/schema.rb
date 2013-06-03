@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531160654) do
+ActiveRecord::Schema.define(:version => 20130602115132) do
 
   create_table "assessable_answers", :force => true do |t|
     t.integer  "question_id"
@@ -107,6 +107,19 @@ ActiveRecord::Schema.define(:version => 20130531160654) do
     t.boolean  "sectionable"
     t.boolean  "repeating"
     t.string   "after_method"
+  end
+
+  create_table "instructors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "model_assessors", :force => true do |t|
+    t.string   "name"
+    t.string   "assessed_model"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "scores", :force => true do |t|

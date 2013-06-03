@@ -4,3 +4,4 @@
     - @stages.each do |stage|
       %li
         = link_to stage.name, stage_path(stage)
+    %li= link_to "Instructor Assessors", model_assessor_path(1)

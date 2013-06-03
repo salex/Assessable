@@ -1,0 +1,22 @@
+%fieldset.index-list
+  %legend Listing Model assessors
+
+  %table
+    %tr.list-header
+      %td Name
+      %td assessed_model
+      %th Actions
+
+      - @model_assessors.each do |model_assessor|
+        %tr
+          %td= model_assessor.name
+          %td= model_assessor.assessed_model
+          %td
+            = link_to 'Show', model_assessor
+            = link_to 'Edit', edit_model_assessor_path(model_assessor)
+            = link_to 'Destroy', model_assessor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+%br
+
+= link_to 'New Model assessor', new_model_assessor_path

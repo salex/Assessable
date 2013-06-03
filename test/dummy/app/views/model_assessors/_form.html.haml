@@ -1,0 +1,16 @@
+= form_for @model_assessor do |f|
+  - if @model_assessor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@model_assessor.errors.count, "error")} prohibited this model_assessor from being saved:"
+      %ul
+        - @model_assessor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :assessed_model
+    = f.text_field :assessed_model
+  .actions
+    = f.submit 'Save'

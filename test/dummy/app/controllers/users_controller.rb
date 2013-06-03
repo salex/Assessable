@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if params[:score]
       redirect_to score_stages_path(:assessed => "user", :assessed_id => @user.id)
     elsif params[:evaluate]
-      redirect_to evaluate_stages_path(:assessed => "user", :assessed_id => @user.id)
+      redirect_to evaluate_stages_path(:assessed => "instructor", :assessed_id => 1)
     elsif params[:survey]
       redirect_to survey_stages_path(:assessed => "user", :assessed_id => @user.id)
     end

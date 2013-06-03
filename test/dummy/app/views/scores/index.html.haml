@@ -6,9 +6,9 @@
       %th Assessor
       %th Assessed
       %th Status
+      %td Date
       %th Raw
       %th Weighted
-      %th Answers
       %th Sect/Stat
       %th Actions
 
@@ -17,9 +17,9 @@
         %td= score.assessor_section.name
         %td= score.assessed.name
         %td= score.status
+        %td= score.updated_at.strftime("%m/%d/%Y")
         %td= score.raw
         %td= score.weighted
-        %td= score.answers
         %td= score.assessor_section.status
         %td
           = link_to 'Show', score

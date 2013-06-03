@@ -78,8 +78,9 @@ class TakeController < ApplicationController
   def finish
     ## Store the final results form the stash and return
     taking =  Take.new(session)
-    if taking.stash.session["taking"]["models"]
-      taking = taking.get_assessed.model_score(taking) unless taking.stash.session["taking"]["models"].empty?
+    if taking.stash.session["taking"]["models"] && !taking.taking["models"].empty?
+      assessed = taking.get_assessed
+      taking = assessed.model_score(taking) 
     end
     if taking.stash.session["taking"]["controller"] == "survey"
       Score.post_survey(taking.stash)

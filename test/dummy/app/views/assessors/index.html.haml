@@ -2,7 +2,8 @@
   %legend 
     -if @assessoring
       = "Listing Assessors for #{@assessoring.class.name}"
-      = link_to "New Assessor", new_assessor_stage_path(@assessoring)
+      = link_to "New Assessor", new_assessor_stage_path(@assessoring) if @assessoring.class == Stage
+      = link_to "New Assessor", new_assessor_model_assessor_path(@assessoring) if @assessoring.class == ModelAssessor
     - else
       Listing All Assessors
 

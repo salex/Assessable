@@ -2,11 +2,11 @@
   %legend 
     Listing All 
     = @status
-    Stage Assessor
+    Take Assessor
 
   %table
     %tr.list-header
-      %th Stage
+      %th Assessoring
       %th Assessed model
       %th Name
       %th Status
@@ -16,7 +16,7 @@
 
     - @assessors.each do |assessor|
       %tr
-        %td= assessor.assessoring.name
+        %td= assessor.assessoring_type
         %td= assessor.assessed_model
         %td= assessor.name
         %td= assessor.status

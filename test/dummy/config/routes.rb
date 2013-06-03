@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :instructors
+
+
+  resources :model_assessors do
+    member do
+      get :new_assessor
+    end
+  end
+
   resources :stages, only: [:index,:show] do
     member do
       get :new_assessor

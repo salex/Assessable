@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Name::
+  = @model_assessor.name
+%p
+  %b Assessed model:
+  = @model_assessor.assessed_model
+
+= link_to 'Edit', edit_model_assessor_path(@model_assessor)
+\|
+= link_to 'Back', model_assessors_path
+
+= render :template => "assessors/index"

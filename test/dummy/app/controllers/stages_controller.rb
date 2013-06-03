@@ -32,7 +32,7 @@ class StagesController < ApplicationController
     render :template => "stages/assessors"
   end
   def evaluate
-    @assessors = Assessor.where(:assessoring_type => "Stage", :status => "active.evaluate")
+    @assessors = ModelAssessor.where(:assessed_model => "Instructor").first.assessors.where( :status => "active.evaluate")
     @status = "active.evaluate"
     render :template => "stages/assessors"
   end

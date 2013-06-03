@@ -1,0 +1,19 @@
+%fieldset.index-list
+  %legend Listing Instructors
+
+  %table
+    %tr
+      %th Name
+      %th Action
+
+    - @instructors.each do |instructor|
+      %tr
+        %td= instructor.name
+        %td
+          = link_to 'Show', instructor
+          = link_to 'Edit', edit_instructor_path(instructor)
+          = link_to 'Destroy', instructor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Instructor', new_instructor_path
