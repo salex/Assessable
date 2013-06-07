@@ -35,6 +35,10 @@ The Dummy Application inside the engine demonstrate usage of the engine in a sim
 The polymorphic approach is not needed, but allows Scores and Assessors be on one place, but separated by the polymorphic type. If you only have
 one assessed model and one assessing model, you just replace the polymorphic relations.
 
+While the above structure manages most of the needs of the original application, there was still a need for an assessment that was the same for all instances of an assessed model. 
+An example would be an annual evaluation for a certain class of person (e.g., instructor). In the Dummy application a model_assessor table was added to define
+these types of assessors. That table then has many assessors the assessed model looks for assessors through model_assessors.  The Instructor model in the Dummy application demonstrates this approach using a repeating assessment/evaluation.
+
 The AssessorSection model stores the entire published AssessableAssessment object. This so the creation of the object in not needed each time someone is assessed.
 This also allows versioning of the assessment to take care problems
 described above where changes are needed. If changes are made to the assessment, you can either:
