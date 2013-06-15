@@ -44,6 +44,8 @@ module Assessable
       if published["max_raw"] != max_raw || published["max_weighted"] != max_weighted
         published["max_raw"] = max_raw
         published["max_weighted"] = max_weighted
+        self.max_raw = max_raw
+        self.max_weighted = max_weighted
         self.updated_at = Time.now  # force commit
         self.save
       end
