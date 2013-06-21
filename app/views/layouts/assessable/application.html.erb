@@ -12,7 +12,7 @@
     <div class="navbar">
       <%= link_to "Home", root_path%> |
        <%= link_to "Assessments", assessments_path %> |
-       <%=link_to "Dummy Home", "/"%>
+       <%=link_to Assessable.config[:main_app_link_name], main_app.root_path%>
     </div>
     <div id="content">
       <% flash.each do |name, msg| %>

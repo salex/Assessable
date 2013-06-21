@@ -32,7 +32,8 @@
     }
   }
   fieldset { 
-    position: relative; 
+    position: relative;
+    width: inherit;
     background: #eee; 
     padding: 4px;
     margin-right: auto; 
