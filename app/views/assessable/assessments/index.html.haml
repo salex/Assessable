@@ -12,7 +12,7 @@
   
   %span.f-left= paginate @assessments
   %span.f-right= page_entries_info @assessments
-
+  .f-clear
   %table
     %tr.list-header
       %th Name
@@ -28,9 +28,9 @@
       %tr
         %td= assessment.name
         %td= assessment.status
-        %td= assessment.category
-        %td= assessment.assessing_key
-        %td= assessment.key
+        %td= truncateText(assessment.category,20)
+        %td= truncateText(assessment.assessing_key,20)
+        %td= truncateText(assessment.key,20)
         %td= assessment.max_raw
         %td= assessment.max_weighted
         %td
