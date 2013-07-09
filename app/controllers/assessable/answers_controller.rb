@@ -36,7 +36,7 @@ module Assessable
     # POST /answers
     # POST /answers.json
     def create
-      @answer = Answer.new(params[:answer])
+      @answer = Answer.new(answer_params)
   
       respond_to do |format|
         if @answer.save
@@ -55,7 +55,7 @@ module Assessable
       #@answer = Answer.find(params[:id])
   
       respond_to do |format|
-        if @answer.update_attributes(params[:answer])
+        if @answer.update_attributes(answer_params)
           format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
           format.json { head :no_content }
         else
@@ -78,6 +78,10 @@ module Assessable
     end
     
     private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def answer_params
+      params.require(:answer).permit(:answer_text, :key, :other_question, :question_id, :requires_other, :sequence, :short_name, :text_eval, :value)
+    end
     
     def load_resources
       if params[:id]

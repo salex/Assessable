@@ -37,7 +37,7 @@ class AssessorSectionsController < ApplicationController
   # POST /assessor_sections
   # POST /assessor_sections.json
   def create
-    @assessor_section = AssessorSection.new(params[:assessor_section])
+    @assessor_section = AssessorSection.new(assessor_section_params)
     
     respond_to do |format|
       if @assessor_section.save
@@ -56,7 +56,7 @@ class AssessorSectionsController < ApplicationController
   # PUT /assessor_sections/1.json
   def update
     @assessor_section = AssessorSection.find(params[:id])
-    @assessor_section.assign_attributes(params[:assessor_section])
+    @assessor_section.assign_attributes(assessor_section_params)
     publish_or_clone if params[:stale]
     respond_to do |format|
       if @assessor_section.save
@@ -126,4 +126,11 @@ class AssessorSectionsController < ApplicationController
   def check_for_new
     redirect_to root_path, :alert => "Assessor Sections cannot be created without a linking Assessment" if params[:id] == "new"
   end
+  
+  private
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def assessor_section_params
+    params.require(:assessor_section).permit(:assessment_id, :assessor_id, :category, :instructions, :max, :name, :published, :published_at, :sequence, :status, :weighted, :model_method)
+  end
+  
 end

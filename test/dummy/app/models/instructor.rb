@@ -1,5 +1,5 @@
 class Instructor < ActiveRecord::Base
-  attr_accessible :name
+  #attr_accessible :name
   has_many :scores, as: :assessed
   
   def model_score(taking)

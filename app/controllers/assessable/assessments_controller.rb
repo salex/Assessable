@@ -43,7 +43,7 @@ module Assessable
     # POST /assessments
     # POST /assessments.json
     def create
-      @assessment = Assessment.new(params[:assessment])
+      @assessment = Assessment.new(assessment_params)
   
       respond_to do |format|
         if @assessment.save
@@ -62,7 +62,7 @@ module Assessable
       @assessment = Assessment.find(params[:id])
   
       respond_to do |format|
-        if @assessment.update_attributes(params[:assessment])
+        if @assessment.update_attributes(assessment_params)
           format.html { redirect_to @assessment, notice: 'Assessment was successfully updated.' }
           format.json { head :no_content }
         else
@@ -111,6 +111,9 @@ module Assessable
     
     
     private
+    def assessment_params
+      params.require(:assessment).permit(:category, :default_layout, :default_tag, :description, :instructions, :key, :max_raw, :max_weighted, :name, :status, :assessing_key)
+    end
     
     
     def reset_stash

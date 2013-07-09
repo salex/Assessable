@@ -2,7 +2,6 @@ module Assessable
   class Assessment < ActiveRecord::Base
     has_many :questions, :order => "sequence", :dependent => :destroy
     
-    attr_accessible :category, :default_layout, :default_tag, :description, :instructions, :key, :max_raw, :max_weighted, :name, :status, :assessing_key
   
     def self.search(params)
       assessments = Assessable::Assessment.scoped

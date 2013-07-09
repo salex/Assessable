@@ -7,8 +7,9 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
-gem 'sass-rails'
-gem 'coffee-rails'
+gem 'sass-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'turbolinks'
 gem 'haml'
 gem 'haml-rails'
 gem 'minitest-rails'

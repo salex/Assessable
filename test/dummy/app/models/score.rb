@@ -1,5 +1,5 @@
 class Score < ActiveRecord::Base
-  attr_accessible :answers, :assessed_id, :assessed_type, :assessor_section_id, :category, :raw, :scoring, :status, :weighted
+  #attr_accessible :answers, :assessed_id, :assessed_type, :assessor_section_id, :category, :raw, :scoring, :status, :weighted
   belongs_to :assessed, :polymorphic => true
   belongs_to :assessor_section
   serialize :scoring, JSON

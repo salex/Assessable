@@ -1,5 +1,4 @@
 class Assessor < ActiveRecord::Base
-  attr_accessible :assessed_model, :assessoring_id, :assessoring_type, :instructions, :before_method, :after_method, :repeating, :sectionable, :name, :status
   belongs_to :assessoring, :polymorphic => true
   has_many :assessor_sections, :order => "sequence", :dependent => :destroy
   

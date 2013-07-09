@@ -1,5 +1,5 @@
 class Stage < ActiveRecord::Base
-  attr_accessible :name
+  #attr_accessible :name
   has_many :assessors, as: :assessoring, :dependent => :destroy
   has_many :assessor_sections, :through => :assessors
   has_many :scores, :through => :assessor_sections

@@ -6,14 +6,14 @@ module Assessable
   # :data is another gentic data store, in this case, post data from single or multiple forms/assessments are stored
   
   class Stash < ActiveRecord::Base
-    attr_accessible :data, :session, :session_id
     serialize :session, JSON
     serialize :data, JSON
     
     ## Get or create as Stash instance by session_id
     def self.get(session)
       Stash.sweep
-      self.find_or_create_by_session_id(session["session_id"])
+      #self.find_or_create_by_session_id(session["session_id"])
+      self.find_or_create_by(session_id: session["session_id"])
     end
     
     ## Destroy the Stash session

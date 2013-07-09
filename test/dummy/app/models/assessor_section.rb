@@ -1,5 +1,4 @@
 class AssessorSection < ActiveRecord::Base
-  attr_accessible :assessment_id, :assessor_id, :category, :instructions, :max, :name, :published, :published_at, :sequence, :status, :weighted, :model_method
   belongs_to :assessor
   has_many :scores, :dependent => :destroy
   

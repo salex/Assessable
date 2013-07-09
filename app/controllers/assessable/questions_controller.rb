@@ -36,7 +36,7 @@ module Assessable
     # POST /questions
     # POST /questions.json
     def create
-      @question = Question.new(params[:question])
+      @question = Question.new(question_params)
   
       respond_to do |format|
         if @question.save
@@ -54,7 +54,7 @@ module Assessable
     def update
       #@question = Question.find(params[:id])
       respond_to do |format|
-        if @question.update_attributes(params[:question])
+        if @question.update_attributes(question_params)
           format.html { redirect_to @question, notice: 'Question was successfully updated.' }
           format.json { head :no_content }
         else
@@ -96,6 +96,9 @@ module Assessable
     
     
     private
+    def question_params
+      params.require(:question).permit(:answer_layout, :answer_tag, :critical, :group_header, :instructions, :key, :min_critical, :question_text, :score_method, :sequence, :short_name, :assessment_id, :weight, :answers_attributes)
+    end
     
     def load_resources
       if params[:id]

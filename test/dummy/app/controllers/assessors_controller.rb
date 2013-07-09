@@ -40,7 +40,7 @@ class AssessorsController < ApplicationController
   # POST /assessors
   # POST /assessors.json
   def create
-    @assessor = Assessor.new(params[:assessor])
+    @assessor = Assessor.new(assessor_params)
 
     respond_to do |format|
       if @assessor.save
@@ -59,7 +59,7 @@ class AssessorsController < ApplicationController
     @assessor = Assessor.find(params[:id])
 
     respond_to do |format|
-      if @assessor.update_attributes(params[:assessor])
+      if @assessor.update_attributes(assessor_params)
         format.html { redirect_to @assessor, notice: 'Assessor was successfully updated.' }
         format.json { head :no_content }
       else
@@ -90,5 +90,12 @@ class AssessorsController < ApplicationController
       redirect_to assessor, alert: "Recoring failed "
     end
   end
+  
+  private
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def assessor_params
+    params.require(:assessor).permit(:assessment_id, :assessor_id, :category, :instructions, :max, :name, :published, :published_at, :sequence, :status, :weighted, :model_method)
+  end
+  
   
 end

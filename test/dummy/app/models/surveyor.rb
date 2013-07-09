@@ -1,5 +1,5 @@
 class Surveyor < ActiveRecord::Base
-  attr_accessible :category, :instructions, :name, :published_assessment, :sequence, :assessment_id, :assessable_id, :assessable_type, :version_at
+  #attr_accessible :category, :instructions, :name, :published_assessment, :sequence, :assessment_id, :assessable_id, :assessable_type, :version_at
   serialize :published_assessment, JSON
   
   def assessment

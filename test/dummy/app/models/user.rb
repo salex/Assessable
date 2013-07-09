@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :role
+  #attr_accessible :username, :role
   has_many :scores, as: :assessed
   
   def can_take(assessor)
