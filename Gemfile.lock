@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    assessable (0.0.4)
+    assessable (0.0.5)
       haml
       haml-rails
       kaminari
