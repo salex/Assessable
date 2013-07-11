@@ -1,13 +1,13 @@
 class Assessing < Assessable::Assessing
   #   # This class inherites Assessable::Assessing, you may override any of the methods are add your own helpers.
   
+  
   #   # This generic class provides a number of class methods that interface with Assessable without using namespacing.
   #   #   The modules/models it interfaces with are:
-  #   #     Displaying module
-  #   #       Display class
   #   #     Scoring module
   #   #       Score class
   #   #     Stash class
+  #   # These methods could be namespaced and copied to you own class
   #     
   #   ## Stash
   #   def self.get_post(id, session)
@@ -45,19 +45,6 @@ class Assessing < Assessable::Assessing
   #     #   scoring.scored_post, appends the scores hash to the original post
   #   end
   #   
-  #   ## Displaying Moudule
-  #   def self.display_assessment(published_assessment,post=nil)
-  #     # renders html for the published_assessment object
-  #     # the post argument is optional and ignores the scores object if includes.
-  #     # calls a class method in the Assessable::Displaying::Display class
-  #     # that creates a display object and returns just the html.
-  #     Assessable::Displaying::Display.assessment(published_assessment,post)
-  #   end
-  #   
-      # def self.display_summary(published_assessment,post)
-      #   #renders html displaying a score summary that may be useful
-      #   Assessable::Displaying.display_summary(published_assessment,post)
-      # end
   
   
 end

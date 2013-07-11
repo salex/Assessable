@@ -1,6 +1,8 @@
-module Assessable
-  # This helper copies the Assessable::DisplayHelper
+module TakeHelper
+  # This helper include the model Assessable::DisplayHelper
   # and provides a two public method/functions 
+  # rails g Assessable:helper will replace this this file with one that includes the source code
+  # if you wish to modify how an assessment or summary is displayed
     
     # def display_assessment(published,post=nil)
     #   which renders the assessment

@@ -11,8 +11,8 @@ module Assessable
         copy_file "assessing.rb", "app/models/assessing.rb"
       end
       
-      def create_display_helper_file
-        copy_file "display_helper.rb", "app/helpers/assessable/display_helper.rb"
+      def create_take_helper_file
+        copy_file "take_helper.rb", "app/helpers/take_helper.rb"
       end
       
       def create_take_js_file
