@@ -18,7 +18,7 @@
   %legend
     Section - #{@assessment["category"]}
   = form_tag post_assessment_path(@assessment), :id => "assessarea", :name => "assessarea", :"data-behavior" => "validateRequired"
-  = Assessing.display_assessment(@assessment_hash,@post)
+  = display_assessment(@assessment_hash,@post)
   .action-bar
     %input{:name => "submit", :type => "submit", :value => "Continue"}/
 .f-clear

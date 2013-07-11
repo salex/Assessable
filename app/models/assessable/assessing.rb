@@ -45,19 +45,19 @@ module Assessable
       #   scoring.scored_post, appends the scores hash to the original post
     end
     
-    def self.display_assessment(published_assessment,post=nil)
-      # renders html for the published_assessment object
-      # the post argument is optional and ignores the scores object if includes.
-      # calls a class method in the Assessable::Displaying::Display class
-      # that creates a display object and returns just the html.
-      Assessable::Displaying::Display.assessment(published_assessment,post)
-    end
-    
-    def self.display_summary(published_assessment,post)
-      #renders html displaying a score summary that may be useful
-      Assessable::Displaying.display_summary(published_assessment,post)
-    end
-  end
+  #   def self.display_assessment(published_assessment,post=nil)
+  #     # renders html for the published_assessment object
+  #     # the post argument is optional and ignores the scores object if includes.
+  #     # calls a class method in the Assessable::Displaying::Display class
+  #     # that creates a display object and returns just the html.
+  #     Assessable::Displaying::Display.assessment(published_assessment,post)
+  #   end
+  #   
+  #   def self.display_summary(published_assessment,post)
+  #     #renders html displaying a score summary that may be useful
+  #     Assessable::Displaying.display_summary(published_assessment,post)
+  #   end
+  # end
   
 end
 
